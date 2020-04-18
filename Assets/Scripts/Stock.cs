@@ -7,20 +7,22 @@ public class Stock : MonoBehaviour
 {
     // Put this script anywhere
 
-    public Text textStock;
+    public Text textBonbonne;
+    public Text textMetal;
 
     int metal = 100;
     int bonbonne = 100;
 
     void Start()
     {
-        textStock.text = "Metal : 100" + System.Environment.NewLine + "Bonbonne : 100";
+        textBonbonne.text = bonbonne.ToString();
+        textMetal.text = metal.ToString();
     }
 
     public void ChangeMetal(int i)
     {
         metal += i;
-        textStock.text = "Metal : " + metal + System.Environment.NewLine + "Bonbonne : " + bonbonne;
+        textMetal.text = metal.ToString();
     }
 
     public int GetMetal()
@@ -31,7 +33,7 @@ public class Stock : MonoBehaviour
     public void ChangeBonbonne(int i)
     {
         bonbonne += i;
-        textStock.text = "Metal : " + metal + System.Environment.NewLine + "Bonbonne : " + bonbonne;
+        textBonbonne.text = bonbonne.ToString();
     }
 
     public int GetBonbonne()

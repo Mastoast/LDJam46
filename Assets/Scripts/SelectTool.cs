@@ -7,6 +7,12 @@ public class SelectTool : MonoBehaviour
 {
     // Put this script anywhere
 
+    public Image _currentUI;
+
+    public Sprite UI_NONE;
+    public Sprite UI_EXTINCTEUR;
+    public Sprite UI_SOUDEUR;
+
     public enum Tools
     {
         NONE,
@@ -14,33 +20,48 @@ public class SelectTool : MonoBehaviour
         EXTINCTEUR
     }
 
+    // Current tool held in hand
     public Tools tool = Tools.NONE;
 
-    public Text textTool;
-
-    void Start()
+    private void Start()
     {
-        textTool.text = "No current tool";
+        _currentUI.sprite = UI_NONE;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G)) // Simulate tool switching
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (tool == Tools.EXTINCTEUR)
+            {
+                tool = Tools.NONE;
+                _currentUI.sprite = UI_NONE;
+            }
+            else
+            {
+                tool = Tools.EXTINCTEUR;
+                _currentUI.sprite = UI_EXTINCTEUR;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (tool == Tools.SOUDEUR)
+            {
+                tool = Tools.NONE;
+                _currentUI.sprite = UI_NONE;
+            }
+            else
+            {
+                tool = Tools.SOUDEUR;
+                _currentUI.sprite = UI_SOUDEUR;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             tool = Tools.NONE;
-            textTool.text = "No current tool";
-        }
-
-        if (Input.GetKeyDown(KeyCode.H)) // Simulate tool switching
-        {
-            tool = Tools.SOUDEUR;
-            textTool.text = "Current tool : Soudeur";
-        }
-
-        if (Input.GetKeyDown(KeyCode.J)) // Simulate tool switching
-        {
-            tool = Tools.EXTINCTEUR;
-            textTool.text = "Current tool : Extincteur";
+            _currentUI.sprite = UI_NONE;
         }
     }
 }

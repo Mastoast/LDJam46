@@ -9,17 +9,19 @@ public class Repair : MonoBehaviour
 
     public Stock stock;
     public SelectTool selectTool;
+    public PlayerMovement playerMovement;
     public Text textAction;
     public Slider slider;
 
-    GameObject goToRepair = null;
+    // GameObject that will be repaired
+    GameObject _goToRepair = null;
 
     bool _onFire = false;
     bool _onBreach = false;
-
     bool _onStock = false;
 
-    int repairCost = 20;
+    // How much metal or bonbonne will cost the repair
+    int _repairCost = 20;
 
     private void Start()
     {
@@ -29,42 +31,55 @@ public class Repair : MonoBehaviour
 
     private void Update()
     {
+        // Action Key here is E
         if (Input.GetKeyDown(KeyCode.E))
         {
+            // If near a stock cube
             if (_onStock)
             {
                 textAction.text = "Refilling...";
+                // Refill metal and bonbonne
                 StartCoroutine(Refilling());
             }
-            else if (goToRepair != null)
+            else if (_goToRepair != null)
             {
+                // If near a fire cube
                 if (_onFire)
                 {
+                    // If holding an Extincteur
                     if (selectTool.tool == SelectTool.Tools.EXTINCTEUR)
                     {
-                        if (stock.GetMetal() >= repairCost)
+                        // If the player has enough Metal
+                        if (stock.GetBonbonne() >= _repairCost)
                         {
                             textAction.text = "Extinguishing fire...";
+                            // Repair
                             StartCoroutine(Repairing());
-                            stock.ChangeBonbonne(-repairCost);
+                            // Remove the stock used
+                            stock.ChangeBonbonne(-_repairCost);
                             _onFire = false;
                         }
-                        else textAction.text = "Not enough Metal";
+                        else textAction.text = "Not enough Bonbonne";
                     }
                     else textAction.text = "No Extincteur equiped";
                 }
+                // If near a breach
                 else if (_onBreach)
                 {
+                    // If holding a Soudeur
                     if (selectTool.tool == SelectTool.Tools.SOUDEUR)
                     {
-                        if (stock.GetBonbonne() >= repairCost)
+                        // If the player has enough Bonbonne
+                        if (stock.GetMetal() >= _repairCost)
                         {
                             textAction.text = "Repairing breach...";
+                            // Repair
                             StartCoroutine(Repairing());
-                            stock.ChangeMetal(-repairCost);
+                            // Remove the stock used
+                            stock.ChangeMetal(-_repairCost);
                             _onBreach = false;
                         }
-                        else textAction.text = "Not enough Bonbonne";
+                        else textAction.text = "Not enough Metal";
                     }
                     else textAction.text = "No Soudeur equiped";
                 }
@@ -77,12 +92,13 @@ public class Repair : MonoBehaviour
     IEnumerator Refilling()
     {
         // Disable movement while repairing
-        gameObject.GetComponent<CharacterController>().enabled = false;
+        playerMovement.canMove = false;
 
         slider.gameObject.SetActive(true);
 
         float timer = 3f;
 
+        // Slider filling
         while (timer > 0f)
         {
             timer -= Time.deltaTime;
@@ -92,14 +108,15 @@ public class Repair : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        // Action
         stock.ChangeBonbonne(50);
         stock.ChangeMetal(50);
 
         // Enable movement
-        gameObject.GetComponent<CharacterController>().enabled = true;
+        playerMovement.canMove = true;
 
+        // Reset values
         textAction.text = "";
-
         slider.value = 0f;
 
         slider.gameObject.SetActive(false);
@@ -108,12 +125,13 @@ public class Repair : MonoBehaviour
     IEnumerator Repairing()
     {
         // Disable movement while repairing
-        gameObject.GetComponent<CharacterController>().enabled = false;
+        playerMovement.canMove = false;
 
         slider.gameObject.SetActive(true);
 
-        float timer = 5f;
+        float timer = 1f;
 
+        // Slider filling
         while (timer > 0f)
         {
             timer -= Time.deltaTime;
@@ -123,14 +141,15 @@ public class Repair : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        Destroy(goToRepair);
-        goToRepair = null;
+        // ACtion
+        Destroy(_goToRepair);
+        _goToRepair = null;
 
         // Enable movement
-        gameObject.GetComponent<CharacterController>().enabled = true;
+        playerMovement.canMove = true;
 
+        // Reset values
         textAction.text = "";
-
         slider.value = 0f;
 
         slider.gameObject.SetActive(false);
@@ -141,13 +160,13 @@ public class Repair : MonoBehaviour
         if (other.tag.Equals("Fire"))
         {
             _onFire = true;
-            goToRepair = other.gameObject;
+            _goToRepair = other.gameObject;
             textAction.text = "Press E to put out fire";
         }
         else if (other.tag.Equals("Breach"))
         {
             _onBreach = true;
-            goToRepair = other.gameObject;
+            _goToRepair = other.gameObject;
             textAction.text = "Press E to repair breach";
         }
         else if (other.tag.Equals("Stock"))
@@ -161,13 +180,13 @@ public class Repair : MonoBehaviour
         if (other.tag.Equals("Fire"))
         {
             _onFire = false;
-            goToRepair = null;
+            _goToRepair = null;
             textAction.text = "";
         }
         else if (other.tag.Equals("Breach"))
         {
             _onBreach = false;
-            goToRepair = null;
+            _goToRepair = null;
             textAction.text = "";
         }
         else if (other.tag.Equals("Stock"))
