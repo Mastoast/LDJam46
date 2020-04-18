@@ -7,11 +7,17 @@ public class LaserController : MonoBehaviour
     public float speed = 10.0f;
 
     private Rigidbody rigidbody;
+    private AudioSource pew;
+    private LineRenderer line;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        //rigidbody.velocity = new Vector3(0, 0, 10);
+        pew = GetComponentInChildren<AudioSource>();
+        line = GetComponent<LineRenderer>();
+
+        rigidbody.AddForce(transform.forward * speed);
     }
 
     // Update is called once per frame
@@ -19,13 +25,19 @@ public class LaserController : MonoBehaviour
     {
         
     }
-
     void OnCollisionEnter(Collision collision)
     {
-        // Create breach
+        if (!pew.isPlaying)
+        {
+            // Create breach on starship
 
-        Debug.Log("toto");
-        Destroy(gameObject);
+            // Hide visual
+            line.enabled = false;
+
+            // Play dead sound
+            pew.Play();
+            Destroy(gameObject, pew.clip.length);
+        }
     }
 
 }
