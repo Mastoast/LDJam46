@@ -11,13 +11,21 @@ public class LaserController : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        rigidbody.velocity = new Vector3(0, 0, 10);
+        //rigidbody.velocity = new Vector3(0, 0, 10);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Create breach
+
+        Debug.Log("toto");
+        Destroy(gameObject);
     }
 
 }
