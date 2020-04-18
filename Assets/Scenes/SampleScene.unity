@@ -232,6 +232,11 @@ PrefabInstance:
       propertyPath: gravity
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4198787704889609536, guid: 701899e4b1acf7543b3d367e6adf2f5e,
+        type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 495970543}
     - target: {fileID: 7054477525043561765, guid: 701899e4b1acf7543b3d367e6adf2f5e,
         type: 3}
       propertyPath: m_LocalPosition.x

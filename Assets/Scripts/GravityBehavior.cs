@@ -14,7 +14,7 @@ public class GravityBehavior : MonoBehaviour
     private float distGround;
 
     private Transform myTransform;
-    public CapsuleCollider capsuleCollider;
+    public Collider collider;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class GravityBehavior : MonoBehaviour
         myTransform = transform;
         GetComponent<Rigidbody>().freezeRotation = true;
 
-        distGround = capsuleCollider.bounds.extents.y - capsuleCollider.center.y;
+        distGround = collider.bounds.extents.y - collider.bounds.center.y;
     }
 
     private void FixedUpdate()
