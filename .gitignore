@@ -59,4 +59,4 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Ignore custom scenes
-ignore_*.unity
+ignore_*
