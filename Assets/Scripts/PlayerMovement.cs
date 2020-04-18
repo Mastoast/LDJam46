@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 15f;
     private Vector3 moveDir;
 
+    public bool canMove = true;
+
     // Update is called once per frame
     void Update()
     {
@@ -15,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + transform.TransformDirection(moveDir) * speed * Time.deltaTime);
-        
+        if (canMove)
+            GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + transform.TransformDirection(moveDir) * speed * Time.deltaTime);
     }
 }
