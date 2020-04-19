@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
-    public float movementSpeed = 1000.0f;
+    public float movementSpeed = 50.0f;
     public float rotationSpeed = 2.3f;
     public Pilot pilot;
 
-    protected Rigidbody rb;
+    protected Vector3 velocity;
     protected GameObject target;
 
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class ShipController : MonoBehaviour
     void FixedUpdate()
     {
         GetDecision();
+        Move();
     }
 
     public void GetDecision()
@@ -36,12 +37,16 @@ public class ShipController : MonoBehaviour
             Vector3 addAngle = pilot.GetRotationDecision(transform, target.transform) * (Time.fixedDeltaTime * rotationSpeed);
             transform.forward += addAngle;
 
-
             // Handle velocity
-            Vector3 addPosition = rb.rotation * Vector3.forward;
+            Vector3 addPosition = transform.forward;
             Vector3 addSpeed = pilot.GetVelocityDecision(transform, target.transform);
             addPosition = new Vector3(addPosition.x * addSpeed.x, addPosition.y * addSpeed.y, addPosition.z * addSpeed.z);
-            rb.velocity = addPosition * (Time.fixedDeltaTime * movementSpeed);
+            velocity = addPosition * (Time.fixedDeltaTime * movementSpeed);
         }
+    }
+
+    public void Move()
+    {
+        transform.position += velocity;
     }
 }

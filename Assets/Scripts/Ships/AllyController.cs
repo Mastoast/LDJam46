@@ -10,7 +10,6 @@ public class AllyController : ShipController
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         target = new GameObject();
         target.SetActive(true);
         target.transform.position = new Vector3(100, 50, 0);
@@ -26,6 +25,7 @@ public class AllyController : ShipController
     void FixedUpdate()
     {
         GetDecision();
+        Move();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -37,7 +37,6 @@ public class AllyController : ShipController
             impactAngle.eulerAngles = collision.GetContact(0).normal;
             GameObject newImpact = Instantiate(breach, impactPoint, impactAngle);
             newImpact.transform.SetParent(transform);
-            Debug.Log(newImpact.transform.position);
         }
     }
 
