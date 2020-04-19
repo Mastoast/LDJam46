@@ -6,6 +6,8 @@ public class AllyController : ShipController
 {
     public GameObject breach;
     public GameObject fire;
+    public float hullPoints = 100f;
+    public float damageAmount = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,7 @@ public class AllyController : ShipController
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void FixedUpdate()
@@ -38,6 +40,8 @@ public class AllyController : ShipController
             GameObject newImpact = Instantiate(breach, impactPoint, impactAngle);
             newImpact.transform.SetParent(transform);
             Debug.Log(newImpact.transform.position);
+            //Damage Hull
+            DamageToHull();
         }
     }
 
@@ -45,4 +49,16 @@ public class AllyController : ShipController
     {
 
     }
+
+    //Damage Manager
+    public void DamageToHull()
+    {
+        hullPoints -= damageAmount;
+    }
+
+    public void RepairedPart()
+    {
+        hullPoints += damageAmount;
+    }
+
 }

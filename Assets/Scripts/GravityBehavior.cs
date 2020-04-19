@@ -15,20 +15,22 @@ public class GravityBehavior : MonoBehaviour
 
     private Transform myTransform;
     public Collider PlatformCollider;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         myNormal = transform.up;
         myTransform = transform;
-        GetComponent<Rigidbody>().freezeRotation = true;
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
 
         distGround = PlatformCollider.bounds.extents.y - PlatformCollider.bounds.center.y;
     }
 
     private void FixedUpdate()
     {
-        GetComponent<Rigidbody>().AddForce(-gravity * GetComponent<Rigidbody>().mass * myNormal);
+        rb.AddForce(-gravity * rb.mass * myNormal);
     }
 
     // Update is called once per frame
