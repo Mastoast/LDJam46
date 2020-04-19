@@ -39,6 +39,7 @@ public class AllyController : ShipController
             impactAngle.eulerAngles = collision.GetContact(0).normal;
             GameObject newImpact = Instantiate(breach, impactPoint, impactAngle);
             newImpact.transform.SetParent(transform);
+            DamageToHull();
         }
     }
 
