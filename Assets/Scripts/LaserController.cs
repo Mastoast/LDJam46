@@ -9,18 +9,18 @@ public class LaserController : MonoBehaviour
 
     private float spawnTime;
 
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     private AudioSource pew;
     private LineRenderer line;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         pew = GetComponentInChildren<AudioSource>();
         line = GetComponent<LineRenderer>();
 
-        rigidbody.AddForce(transform.forward * speed);
+        rb.AddForce(transform.forward * speed);
 
         spawnTime = Time.time;
     }
