@@ -13,6 +13,11 @@ public class SelectTool : MonoBehaviour
     public Sprite UI_EXTINCTEUR;
     public Sprite UI_SOUDEUR;
 
+    public GameObject extinguisher;
+    public GameObject soldering;
+
+    public bool canMove = true;
+
     public enum Tools
     {
         NONE,
@@ -30,38 +35,49 @@ public class SelectTool : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (canMove)
         {
-            if (tool == Tools.EXTINCTEUR)
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                if (tool == Tools.EXTINCTEUR)
+                {
+                    tool = Tools.NONE;
+                    _currentUI.sprite = UI_NONE;
+                    extinguisher.SetActive(false);
+                    soldering.SetActive(false);
+                }
+                else
+                {
+                    tool = Tools.EXTINCTEUR;
+                    _currentUI.sprite = UI_EXTINCTEUR;
+                    extinguisher.SetActive(true);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                if (tool == Tools.SOUDEUR)
+                {
+                    tool = Tools.NONE;
+                    _currentUI.sprite = UI_NONE;
+                    extinguisher.SetActive(false);
+                    soldering.SetActive(false);
+                }
+                else
+                {
+                    tool = Tools.SOUDEUR;
+                    _currentUI.sprite = UI_SOUDEUR;
+                    soldering.SetActive(true);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 tool = Tools.NONE;
                 _currentUI.sprite = UI_NONE;
+                extinguisher.SetActive(false);
+                soldering.SetActive(false);
             }
-            else
-            {
-                tool = Tools.EXTINCTEUR;
-                _currentUI.sprite = UI_EXTINCTEUR;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            if (tool == Tools.SOUDEUR)
-            {
-                tool = Tools.NONE;
-                _currentUI.sprite = UI_NONE;
-            }
-            else
-            {
-                tool = Tools.SOUDEUR;
-                _currentUI.sprite = UI_SOUDEUR;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            tool = Tools.NONE;
-            _currentUI.sprite = UI_NONE;
         }
     }
 }
