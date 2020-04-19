@@ -40,12 +40,6 @@ public class LaserController : MonoBehaviour
     {
         if (!bong.isPlaying)
         {
-            // Create breach on starship
-            if(collision.gameObject.CompareTag("Ship") || collision.gameObject.CompareTag("Enemy"))
-            {
-
-            }
-
             // Hide visual
             line.enabled = false;
             collider.enabled = false;
