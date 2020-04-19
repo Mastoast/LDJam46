@@ -181,29 +181,29 @@ public class Repair : MonoBehaviour
 
         textAction.text = "Spam [A] to extinguish the fire !";
 
-        float timer = 5f;
+        float timer = 0f;
         bool emit = false;
 
-        // TODO : ADJUST ANIMATIONS WITH MINI GAME
+        ParticleSystem ps = selectTool.extinguisher.GetComponentInChildren<ParticleSystem>();
+
         while (mg_Fire.playing)
         {
-            timer -= Time.deltaTime;
+            timer += Time.deltaTime;
 
-            if (timer < 4f && timer >= 1f && !emit)
+            if (timer > 1f && !emit)
             {
+                if (!ps.isPlaying) ps.Play();
                 selectTool.extinguisher.GetComponentInChildren<AudioSource>().Play();
-                selectTool.extinguisher.GetComponentInChildren<ParticleSystem>().Play();
                 emit = true;
-            }
-            if (timer < 1f && emit)
-            {
-                selectTool.extinguisher.GetComponentInChildren<AudioSource>().Stop();
-                selectTool.extinguisher.GetComponentInChildren<ParticleSystem>().Stop();
-                emit = false;
             }
 
             yield return new WaitForEndOfFrame();
         }
+
+        animator.SetTrigger("ExtinguishStop");
+
+        selectTool.extinguisher.GetComponentInChildren<AudioSource>().Stop();
+        if (ps.isPlaying) ps.Stop();
 
         // Action
         Destroy(_goToRepair);
@@ -240,29 +240,18 @@ public class Repair : MonoBehaviour
         textAction.color = new Color(0.2f, 0.2f, 0.2f);
         textAction.text = "Press the good keys !";
 
-        float timer = 8f;
-        bool emit = false;
+        selectTool.soldering.GetComponentInChildren<AudioSource>().Play();
 
         // TODO : ADJUST ANIMATIONS WITH MINI GAME
         while (mg_Breach.playing)
         {
-            timer -= Time.deltaTime;
-
-            if (timer < 3.5f && timer >= 0.5f && !emit)
-            {
-                selectTool.soldering.GetComponentInChildren<AudioSource>().Play();
-                selectTool.soldering.GetComponentInChildren<ParticleSystem>().Play();
-                emit = true;
-            }
-            if (timer < 0.5f && emit)
-            {
-                selectTool.soldering.GetComponentInChildren<AudioSource>().Stop();
-                selectTool.soldering.GetComponentInChildren<ParticleSystem>().Stop();
-                emit = false;
-            }
-
             yield return new WaitForEndOfFrame();
         }
+
+        animator.SetTrigger("SolderStop");
+
+        selectTool.soldering.GetComponentInChildren<AudioSource>().Stop();
+        selectTool.soldering.GetComponentInChildren<ParticleSystem>().Stop();
 
         // Action
         Destroy(_goToRepair);
