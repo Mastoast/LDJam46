@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8448963882667274037}
   - component: {fileID: 8448963882667274036}
   - component: {fileID: 8448963882667274039}
+  - component: {fileID: 1412271909391263857}
   - component: {fileID: 1735009281565459929}
   m_Layer: 0
   m_Name: Fire
@@ -110,6 +111,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1412271909391263857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8448963882667274038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 019936e0281be3b4db2a8943ee04c85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &1735009281565459929
 AudioSource:
   m_ObjectHideFlags: 0
