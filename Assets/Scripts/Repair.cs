@@ -187,11 +187,13 @@ public class Repair : MonoBehaviour
 
             if (timer < 4f && timer >= 1f && !playing)
             {
+                selectTool.extinguisher.GetComponentInChildren<AudioSource>().Play();
                 selectTool.extinguisher.GetComponentInChildren<ParticleSystem>().Play();
                 playing = true;
             }
             if (timer < 1f && playing)
             {
+                selectTool.extinguisher.GetComponentInChildren<AudioSource>().Stop();
                 selectTool.extinguisher.GetComponentInChildren<ParticleSystem>().Stop();
                 playing = false;
             }
@@ -246,11 +248,13 @@ public class Repair : MonoBehaviour
 
             if (timer < 3.5f && timer >= 0.5f && !playing)
             {
+                selectTool.soldering.GetComponentInChildren<AudioSource>().Play();
                 selectTool.soldering.GetComponentInChildren<ParticleSystem>().Play();
                 playing = true;
             }
             if (timer < 0.5f && playing)
             {
+                selectTool.soldering.GetComponentInChildren<AudioSource>().Stop();
                 selectTool.soldering.GetComponentInChildren<ParticleSystem>().Stop();
                 playing = false;
             }
