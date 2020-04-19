@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Prefabs/Particles/black_smoke.prefab.meta
 guid: ee971a8d605733d4993f679340c7a378
 PrefabImporter:
@@ -8,10 +7,6 @@ guid: 349a2f04ef9faf942a2318a3f1dfcd67
 folderAsset: yes
 DefaultImporter:
 >>>>>>> efa7cb2b941626b8c70cff0b1c101e71151b6221:Assets/Prefabs/lemechant.meta
-=======
-guid: ee971a8d605733d4993f679340c7a378
-PrefabImporter:
->>>>>>> efa7cb2b941626b8c70cff0b1c101e71151b6221
   externalObjects: {}
   userData: 
   assetBundleName: 
