@@ -10,14 +10,16 @@ public class LaserController : MonoBehaviour
     private float spawnTime;
 
     private Rigidbody rb;
-    private AudioSource pew;
+    private Collider collider;
+    private AudioSource bong;
     private LineRenderer line;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        pew = GetComponentInChildren<AudioSource>();
+        collider = GetComponent<Collider>();
+        bong = GetComponentInChildren<AudioSource>();
         line = GetComponent<LineRenderer>();
 
         rb.AddForce(transform.forward * speed);
@@ -36,16 +38,21 @@ public class LaserController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (!pew.isPlaying)
+        if (!bong.isPlaying)
         {
             // Create breach on starship
+            if(collision.gameObject.CompareTag("Ship") || collision.gameObject.CompareTag("Enemy"))
+            {
+
+            }
 
             // Hide visual
             line.enabled = false;
+            collider.enabled = false;
 
             // Play dead sound
-            pew.Play();
-            Destroy(gameObject, pew.clip.length);
+            bong.Play();
+            Destroy(gameObject, bong.clip.length);
         }
     }
 
