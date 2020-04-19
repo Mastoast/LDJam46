@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: af6b78463f6cdc842b415229d7548b5f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Generale Station
+  fontNames:
+  - Generale Station
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ebe89591a6d92c64b85e46ec7b1c31e6, type: 3}
+  - {fileID: 12800000, guid: 54c4ede1c9b9f764bbdf5af45db2a7c2, type: 3}
+  - {fileID: 12800000, guid: 9e2de9656eb86564a8d22c60c7217cde, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
