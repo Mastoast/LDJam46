@@ -9,6 +9,7 @@ TagManager:
   - Stock
   - Ship
   - Enemy
+  - Laser
   layers:
   - Default
   - TransparentFX
