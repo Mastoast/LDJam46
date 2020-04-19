@@ -8,15 +8,17 @@ public class ShipController : MonoBehaviour
     public float rotationSpeed = 2.3f;
     public Pilot pilot;
 
-    private Rigidbody rb;
-    private GameObject target;
+    protected Rigidbody rb;
+    protected GameObject target;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindGameObjectWithTag("Player");
-        pilot = new EnemyPilot();
+        target = new GameObject();
+        target.SetActive(true);
+        target.transform.position = new Vector3(100, 50, 0);
+        pilot = new AllyPilot();
     }
 
     // Update is called once per frame
@@ -27,6 +29,12 @@ public class ShipController : MonoBehaviour
 
     void FixedUpdate()
     {
+        GetDecision();
+    }
+
+    public void GetDecision()
+    {
+        Debug.Log(target.activeSelf);
         // Get pilot decision
         if (target.activeSelf)
         {
