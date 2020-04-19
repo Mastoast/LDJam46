@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         //moveDir = new Vector3(Input.GetAxisRaw("Horizontal");
 
-        Debug.Log(Input.GetAxis("Horizontal"));
+        //Debug.Log(Input.GetAxis("Horizontal"));
     }
 
     void FixedUpdate()
