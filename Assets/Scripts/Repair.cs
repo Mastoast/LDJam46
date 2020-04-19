@@ -50,24 +50,24 @@ public class Repair : MonoBehaviour
                     {
                         // If looking at the stock cube
                         RaycastHit hit;
-                        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+                        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit))
                         {
                             if (hit.transform.tag.Equals("Stock"))
                             {
-                                textAction.text = "Refilling...";
                                 // Refill metal and bonbonne
                                 StartCoroutine(Refilling());
                             }
-                            else textAction.text = "Not looking at the stock cube";
+                            else textAction.text = "Not looking at the stock cube 2";
                         }
-                        else textAction.text = "Not looking at the stock cube";
+                        else textAction.text = "Not looking at the stock cube 1";
                     }
+
                     // If near a fire cube
-                    else if (_onFire)
+                    if (_onFire)
                     {
                         // If looking at the fire
                         RaycastHit hit;
-                        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+                        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit))
                         {
                             if (hit.transform.tag.Equals("Fire"))
                             {
@@ -80,20 +80,21 @@ public class Repair : MonoBehaviour
                                         // Repair
                                         StartCoroutine(Extinguishing());
                                     }
-                                    else textAction.text = "Not enough Bonbonne";
+                                    else textAction.text = "Not enough Carboy";
                                 }
-                                else textAction.text = "No Extincteur equiped";
+                                else textAction.text = "No Extinguisher equiped";
                             }
-                            else textAction.text = "Not looking at the fire";
+                            else textAction.text = "Not looking at the fire 2";
                         }
-                        else textAction.text = "Not looking at the fire";
+                        else textAction.text = "Not looking at the fire 1";
                     }
+
                     // If near a breach
-                    else if (_onBreach)
+                    if (_onBreach)
                     {
                         // If looking at the breach
                         RaycastHit hit;
-                        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+                        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit))
                         {
                             if (hit.transform.tag.Equals("Breach"))
                             {
@@ -108,13 +109,12 @@ public class Repair : MonoBehaviour
                                     }
                                     else textAction.text = "Not enough Metal";
                                 }
-                                else textAction.text = "No Soudeur equiped";
+                                else textAction.text = "No Soldering tool equiped";
                             }
-                            else textAction.text = "Not looking at the fire";
+                            else textAction.text = "Not looking at the breach 2";
                         }
-                        else textAction.text = "Not looking at the breach";
+                        else textAction.text = "Not looking at the breach 1";
                     }
-                    else textAction.text = "No cube near";
                 }
                 else textAction.text = "Nothing to interact with";
             }
@@ -130,6 +130,7 @@ public class Repair : MonoBehaviour
         selectTool.canMove = false;
 
         slider.gameObject.SetActive(true);
+        textAction.text = "Refilling...";
 
         float timer = 3f;
 
@@ -296,7 +297,7 @@ public class Repair : MonoBehaviour
         {
             _onStock = true;
             _goToRepair = other.gameObject;
-            textAction.text = "Press E to refill your metal and bonbonne";
+            textAction.text = "Press E to refill your metal and carboy";
         }
     }
     private void OnTriggerExit(Collider other)
