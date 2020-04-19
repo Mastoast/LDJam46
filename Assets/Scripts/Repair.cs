@@ -17,6 +17,10 @@ public class Repair : MonoBehaviour
     public PlayerMovement playerMovement;
     public Mouse_LookAround mouse;
 
+    // Mini Games
+    public MiniGame_Fire mg_Fire;
+    public MiniGame_Breach mg_Breach;
+
     // GameObject that will be repaired
     GameObject _goToRepair = null;
 
@@ -169,33 +173,33 @@ public class Repair : MonoBehaviour
         mouse.canMove = false;
         selectTool.canMove = false;
 
-        slider.gameObject.SetActive(true);
-        textAction.text = "Extinguishing fire...";
-
         // Animation
         animator.SetTrigger("Extinguish");
 
-        float timer = 5f;
-        bool playing = false;
+        // Mini Game
+        mg_Fire.LaunchMiniGame(_goToRepair);
 
-        // Slider filling
-        while (timer > 0f)
+        textAction.text = "Spam [A] to extinguish the fire !";
+
+        float timer = 5f;
+        bool emit = false;
+
+        // TODO : ADJUST ANIMATIONS WITH MINI GAME
+        while (mg_Fire.playing)
         {
             timer -= Time.deltaTime;
 
-            slider.value = 1 - (timer / 5f);
-
-            if (timer < 4f && timer >= 1f && !playing)
+            if (timer < 4f && timer >= 1f && !emit)
             {
                 selectTool.extinguisher.GetComponentInChildren<AudioSource>().Play();
                 selectTool.extinguisher.GetComponentInChildren<ParticleSystem>().Play();
-                playing = true;
+                emit = true;
             }
-            if (timer < 1f && playing)
+            if (timer < 1f && emit)
             {
                 selectTool.extinguisher.GetComponentInChildren<AudioSource>().Stop();
                 selectTool.extinguisher.GetComponentInChildren<ParticleSystem>().Stop();
-                playing = false;
+                emit = false;
             }
 
             yield return new WaitForEndOfFrame();
@@ -216,10 +220,7 @@ public class Repair : MonoBehaviour
 
         // Reset values
         textAction.text = "";
-        slider.value = 0f;
         _onFire = false;
-
-        slider.gameObject.SetActive(false);
     }
 
     IEnumerator Repairing()
@@ -230,33 +231,34 @@ public class Repair : MonoBehaviour
         mouse.canMove = false;
         selectTool.canMove = false;
 
-        slider.gameObject.SetActive(true);
-        textAction.text = "Repairing breach...";
-
         // Animation
         animator.SetTrigger("Solder");
 
-        float timer = 8f;
-        bool playing = false;
+        // Mini Game
+        mg_Breach.LaunchMiniGame(_goToRepair);
 
-        // Slider filling
-        while (timer > 0f)
+        textAction.color = new Color(0.2f, 0.2f, 0.2f);
+        textAction.text = "Press the good keys !";
+
+        float timer = 8f;
+        bool emit = false;
+
+        // TODO : ADJUST ANIMATIONS WITH MINI GAME
+        while (mg_Breach.playing)
         {
             timer -= Time.deltaTime;
 
-            slider.value = 1 - (timer / 8f);
-
-            if (timer < 3.5f && timer >= 0.5f && !playing)
+            if (timer < 3.5f && timer >= 0.5f && !emit)
             {
                 selectTool.soldering.GetComponentInChildren<AudioSource>().Play();
                 selectTool.soldering.GetComponentInChildren<ParticleSystem>().Play();
-                playing = true;
+                emit = true;
             }
-            if (timer < 0.5f && playing)
+            if (timer < 0.5f && emit)
             {
                 selectTool.soldering.GetComponentInChildren<AudioSource>().Stop();
                 selectTool.soldering.GetComponentInChildren<ParticleSystem>().Stop();
-                playing = false;
+                emit = false;
             }
 
             yield return new WaitForEndOfFrame();
@@ -276,11 +278,9 @@ public class Repair : MonoBehaviour
         selectTool.canMove = true;
 
         // Reset values
+        textAction.color = new Color(0.8f, 0.8f, 0.8f);
         textAction.text = "";
-        slider.value = 0f;
         _onBreach = false;
-
-        slider.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
