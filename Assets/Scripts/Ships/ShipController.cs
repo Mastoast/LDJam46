@@ -14,11 +14,6 @@ public class ShipController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        target = new GameObject();
-        target.SetActive(true);
-        target.transform.position = new Vector3(100, 50, 0);
-        pilot = new AllyPilot();
     }
 
     // Update is called once per frame
@@ -34,9 +29,8 @@ public class ShipController : MonoBehaviour
 
     public void GetDecision()
     {
-        Debug.Log(target.activeSelf);
         // Get pilot decision
-        if (target.activeSelf)
+        if (pilot != null && target.activeSelf)
         {
             // Handle rotation
             Vector3 addAngle = pilot.GetRotationDecision(transform, target.transform) * (Time.fixedDeltaTime * rotationSpeed);
