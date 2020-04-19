@@ -9,14 +9,10 @@ public class MenuBackgroundManager : MonoBehaviour
 
     private Vector3 starshipMovement;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        starshipMovement = new Vector3(0f, 0f, -Speed);
-    }
 
     void FixedUpdate()
     {
+        starshipMovement = Starship.transform.forward * Speed;
         Starship.transform.localPosition = (Starship.transform.localPosition + starshipMovement);
     }
 }
