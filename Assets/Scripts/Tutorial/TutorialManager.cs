@@ -47,6 +47,7 @@ public class TutorialManager : MonoBehaviour
 
     public void setNextTutorial(int currentOrder)
     {
+        text.color = Color.white;
         currentTutorial = getTutorialByOrder(currentOrder);
         if (!currentTutorial)
         {
@@ -70,5 +71,10 @@ public class TutorialManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void actionFinished()
+    {
+        text.color = Color.yellow;
     }
 }

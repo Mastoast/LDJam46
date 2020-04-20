@@ -18,6 +18,7 @@ public class ShowBidule : Tutorial
     {
         if (justStarted)
         {
+            GetComponent<AudioSource>().Play();
             pm.enabled = false;
             canvas.enabled = false;
             bidule.SetActive(true);
@@ -29,8 +30,9 @@ public class ShowBidule : Tutorial
             startTime = Time.time;
             justStarted = false;
         }
-        if(Time.time - startTime > 5)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
+            GetComponent<AudioSource>().Stop();
             cameraBidule.enabled = false;
             cameraPlayer.enabled = true;
             pm.enabled = true;

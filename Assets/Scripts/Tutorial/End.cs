@@ -18,6 +18,7 @@ public class End : Tutorial
     {
         if (justStarted)
         {
+            GetComponent<AudioSource>().Play();
             cameraPlayer.enabled = false;
             cameraRobot.enabled = true;
             
@@ -28,6 +29,11 @@ public class End : Tutorial
             
             startTime = Time.time;
             justStarted = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            GetComponent<AudioSource>().Stop();
+            TutorialManager.Instance.completedTutorial();
         }
     }
 }

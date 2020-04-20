@@ -8,7 +8,6 @@ public class ShowRefill : Tutorial
     public Camera cameraPlayer;
     public PlayerMovement pm;
     public Canvas canvas;
-    private float startTime;
     private bool justStarted = true;
 
         
@@ -16,17 +15,18 @@ public class ShowRefill : Tutorial
     {
         if (justStarted)
         {
+            GetComponent<AudioSource>().Play();
             pm.enabled = false;
             canvas.enabled = false;
 
             cameraPlayer.enabled = false;
             cameraRefill.enabled = true;
-
-            startTime = Time.time;
+            
             justStarted = false;
         }
-        if(Time.time - startTime > 5)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
+            GetComponent<AudioSource>().Stop();
             cameraRefill.enabled = false;
             cameraPlayer.enabled = true;
             pm.enabled = true;

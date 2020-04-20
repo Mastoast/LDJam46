@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tutorial : MonoBehaviour
 {
     public int order;
+    [TextArea]
     public string explanation;
 
     void Awake()
