@@ -6,7 +6,6 @@ public class ShowShip : Tutorial
 {
     public Camera cameraRobot;
     public Camera cameraRear;
-    private float startTime;
     private bool justStarted = true;
     // Start is called before the first frame update
 
@@ -14,14 +13,15 @@ public class ShowShip : Tutorial
     {
         if(justStarted)
         {
+            GetComponent<AudioSource>().Play();
             cameraRobot.enabled = false;
             cameraRear.enabled = true;
-            startTime = Time.time;
             justStarted = false;
 
         }
-        if (Time.time - startTime > 2)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
+            GetComponent<AudioSource>().Stop();
             TutorialManager.Instance.completedTutorial();
         }
     }

@@ -8,7 +8,6 @@ public class ShowEnemy : Tutorial
     public Camera cameraEnemy;
     public Camera cameraPlayer;
     public PlayerMovement pm;
-    private float startTime;
     private bool justStarted = true;
 
         
@@ -16,17 +15,17 @@ public class ShowEnemy : Tutorial
     {
         if (justStarted)
         {
+            GetComponent<AudioSource>().Play();
             pm.enabled = false;
             enemy.SetActive(true);
 
             cameraPlayer.enabled = false;
             cameraEnemy.enabled = true;
-
-            startTime = Time.time;
             justStarted = false;
         }
-        if(Time.time - startTime > 2)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
+            GetComponent<AudioSource>().Stop();
             TutorialManager.Instance.completedTutorial();
         }
     }

@@ -14,7 +14,6 @@ public class ShowRobot : Tutorial
     public Camera cameraRobot;
     public PlayerMovement pm;
     public Canvas canvas;
-    private float startTime;
     private bool justStarted = true;
 
         
@@ -22,7 +21,7 @@ public class ShowRobot : Tutorial
     {
         if (justStarted)
         {
-
+            GetComponent<AudioSource>().Play();
             foreach(Camera c in allCameras)
             {
                 c.enabled = false;
@@ -39,11 +38,11 @@ public class ShowRobot : Tutorial
 
             vaisseau.movementSpeed = 0.0f;
             vaisseau.rotationSpeed = 0.0f;
-            startTime = Time.time;
             justStarted = false;
         }
-        if(Time.time - startTime > 2)
+        if(Input.GetKeyDown(KeyCode.Return))
         {
+            GetComponent<AudioSource>().Stop();
             vaisseau.movementSpeed = 100.0f;
             vaisseau.rotationSpeed = 0.1f;
             TutorialManager.Instance.completedTutorial();

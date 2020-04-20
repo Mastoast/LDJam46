@@ -7,21 +7,21 @@ public class ShowFire : Tutorial
     public Camera cameraEnemy;
     public Camera cameraFire;
     public GameObject fire;
-    private float startTime;
     private bool justStarted = true;
         
     public override void checkIfHappening()
     {
         if (justStarted)
         {
+            GetComponent<AudioSource>().Play();
             fire.SetActive(true);
             cameraEnemy.enabled = false;
             cameraFire.enabled = true;
-            startTime = Time.time;
             justStarted = false;
         }
-        if(Time.time - startTime > 2)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
+            GetComponent<AudioSource>().Stop();
             TutorialManager.Instance.completedTutorial();
         }
     }

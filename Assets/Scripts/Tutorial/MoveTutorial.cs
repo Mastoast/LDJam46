@@ -11,11 +11,15 @@ public class MoveTutorial : Tutorial
     public PlayerMovement pm;
     public List<string> keysToPress = new List<string>();
     private bool justStarted = true;
+    private float startTime;
+    private bool justFinished = true;
 
     public override void checkIfHappening()
     {
         if (justStarted)
         {
+
+            GetComponent<AudioSource>().Play();
             pm.enabled = true;
             cameraRear.enabled = false;
             cameraPlayer.enabled = true;
@@ -34,6 +38,14 @@ public class MoveTutorial : Tutorial
 
         if(keysToPress.Count == 0)
         {
+            if (justFinished)
+            {
+                GetComponent<AudioSource>().Stop();
+                TutorialManager.Instance.actionFinished();
+                justFinished = false;
+                startTime = Time.time;
+            }
+            if(Time.time - startTime > 2)
             TutorialManager.Instance.completedTutorial();
         }
         
