@@ -27,27 +27,27 @@ public class UI_ShowIndications : MonoBehaviour
         switch (position)
         {
             case "ColliderAileGauche":
-                shipMapScript.LeftWing();
+                shipMapScript.LeftWing(1);
                 p = "left wing";
                 break;
 
             case "ColliderAileDroite":
-                shipMapScript.RightWing();
+                shipMapScript.RightWing(1);
                 p = "right wing";
                 break;
 
             case "ColliderAvant":
-                shipMapScript.Front();
+                shipMapScript.Front(1);
                 p = "front";
                 break;
 
             case "ColliderCentre":
-                shipMapScript.Center();
+                shipMapScript.Center(1);
                 p = "center";
                 break;
 
             case "ColliderArriere":
-                shipMapScript.Back();
+                shipMapScript.Back(1);
                 p = "back";
                 break;
         }

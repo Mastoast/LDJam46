@@ -12,6 +12,7 @@ public class Repair : MonoBehaviour
     public Text textAction;
     public Slider slider;
     public Animator animator;
+    public ShipMap shipmap;
 
     // Freeze player movement and camera
     public PlayerMovement playerMovement;
@@ -32,6 +33,8 @@ public class Repair : MonoBehaviour
 
     // How much metal or bonbonne will cost the repair
     int _repairCost = 20;
+
+    string position = "";
 
     private void Start()
     {
@@ -127,11 +130,7 @@ public class Repair : MonoBehaviour
 
     IEnumerator Refilling()
     {
-        // Disable movement while repairing
-        _droneBusy = true;
-        playerMovement.canMove = false;
-        mouse.canMove = false;
-        selectTool.canMove = false;
+        BeforeAction();
 
         slider.gameObject.SetActive(true);
         textAction.text = "Refilling...";
@@ -167,11 +166,7 @@ public class Repair : MonoBehaviour
 
     IEnumerator Extinguishing()
     {
-        // Disable movement while repairing
-        _droneBusy = true;
-        playerMovement.canMove = false;
-        mouse.canMove = false;
-        selectTool.canMove = false;
+        BeforeAction();
 
         // Animation
         animator.SetTrigger("Extinguish");
@@ -205,31 +200,16 @@ public class Repair : MonoBehaviour
         selectTool.extinguisher.GetComponentInChildren<AudioSource>().Stop();
         if (ps.isPlaying) ps.Stop();
 
-        // Action
-        Destroy(_goToRepair);
-        _goToRepair = null;
-
-        // Remove the stock used
         stock.ChangeBonbonne(-_repairCost);
 
-        // Enable movement
-        _droneBusy = false;
-        playerMovement.canMove = true;
-        mouse.canMove = true;
-        selectTool.canMove = true;
-
-        // Reset values
-        textAction.text = "";
         _onFire = false;
+
+        AfterAction();
     }
 
     IEnumerator Repairing()
     {
-        // Disable movement while repairing
-        _droneBusy = true;
-        playerMovement.canMove = false;
-        mouse.canMove = false;
-        selectTool.canMove = false;
+        BeforeAction();
 
         // Animation
         animator.SetTrigger("Solder");
@@ -242,7 +222,6 @@ public class Repair : MonoBehaviour
 
         selectTool.soldering.GetComponentInChildren<AudioSource>().Play();
 
-        // TODO : ADJUST ANIMATIONS WITH MINI GAME
         while (mg_Breach.playing)
         {
             yield return new WaitForEndOfFrame();
@@ -253,12 +232,51 @@ public class Repair : MonoBehaviour
         selectTool.soldering.GetComponentInChildren<AudioSource>().Stop();
         selectTool.soldering.GetComponentInChildren<ParticleSystem>().Stop();
 
+        stock.ChangeMetal(-_repairCost);
+
+        textAction.color = new Color(0.8f, 0.8f, 0.8f);
+        _onBreach = false;
+
+        AfterAction();
+    }
+
+    private void BeforeAction()
+    {
+        // Disable movement while repairing
+        _droneBusy = true;
+        playerMovement.canMove = false;
+        mouse.canMove = false;
+        selectTool.canMove = false;
+    }
+
+    private void AfterAction()
+    {
         // Action
         Destroy(_goToRepair);
         _goToRepair = null;
 
-        // Remove the stock used
-        stock.ChangeMetal(-_repairCost);
+        switch (position)
+        {
+            case "AileGauche":
+                shipmap.LeftWing(-1);
+                break;
+
+            case "AileDroite":
+                shipmap.RightWing(-1);
+                break;
+
+            case "Avant":
+                shipmap.Front(-1);
+                break;
+
+            case "Centre":
+                shipmap.Center(-1);
+                break;
+
+            case "Arriere":
+                shipmap.Back(-1);
+                break;
+        }
 
         // Enable movement
         _droneBusy = false;
@@ -266,10 +284,7 @@ public class Repair : MonoBehaviour
         mouse.canMove = true;
         selectTool.canMove = true;
 
-        // Reset values
-        textAction.color = new Color(0.8f, 0.8f, 0.8f);
         textAction.text = "";
-        _onBreach = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -291,6 +306,27 @@ public class Repair : MonoBehaviour
             _onStock = true;
             _goToRepair = other.gameObject;
             textAction.text = "Press E to refill your metal and carboy";
+        }
+
+        if (other.name.Equals("ColliderAileGauche"))
+        {
+            position = "AileGauche";
+        }
+        if (other.name.Equals("ColliderAileDroite"))
+        {
+            position = "AileDroite";
+        }
+        if (other.name.Equals("ColliderAvant"))
+        {
+            position = "Avant";
+        }
+        if (other.name.Equals("ColliderCentre"))
+        {
+            position = "Centre";
+        }
+        if (other.name.Equals("ColliderArriere"))
+        {
+            position = "Arriere";
         }
     }
     private void OnTriggerExit(Collider other)

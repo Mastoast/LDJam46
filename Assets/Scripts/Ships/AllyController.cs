@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AllyController : ShipController
 {
+    public Slider shipHealth;
+    public GameObject gameOverWindow;
     public float hullPoints = 100f;
     public float damageAmount = 10f;
 
@@ -26,6 +29,13 @@ public class AllyController : ShipController
                 Random.Range(-2000, 2000),
                 Random.Range(-2000, 2000)
             );
+        }
+
+        shipHealth.value = hullPoints / 100f;
+
+        if (hullPoints <= 0f)
+        {
+            gameOverWindow.SetActive(true);
         }
     }
 
