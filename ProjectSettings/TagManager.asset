@@ -10,6 +10,7 @@ TagManager:
   - Ship
   - Enemy
   - Laser
+  - Bidule
   layers:
   - Default
   - TransparentFX
