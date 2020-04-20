@@ -9,38 +9,31 @@ public class DamageCreator : MonoBehaviour
 
     private AllyController ship;
 
-    // Start is called before the first frame update
     void Start()
     {
         ship = GetComponentInParent<AllyController>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Laser"))
         {
-            // Create a breach
-            Vector3 impactPoint = collision.GetContact(0).point;
-            Quaternion impactAngle = Quaternion.identity;
-            impactAngle.eulerAngles = collision.GetContact(0).normal;
+            float r1 = Random.Range(0f, 1f);
 
-            // Impact
-            GameObject newImpact = Instantiate(fire, impactPoint, impactAngle, ship.transform);
+            // 25% chance to create a fire
+            if (r1 < 0.25f)
+            {
+                // Create damage
+                Vector3 impactPoint = collision.GetContact(0).point;
+                Quaternion impactAngle = Quaternion.identity;
+                impactAngle.eulerAngles = collision.GetContact(0).normal;
 
-            // Damage
-            DamageToHull();
+                Instantiate(fire, impactPoint, impactAngle, ship.transform);
+
+                // Damage
+                DamageToHull();
+            }
         }
-    }
-
-    public void CreateImpact()
-    {
-
     }
 
     //Damage Manager

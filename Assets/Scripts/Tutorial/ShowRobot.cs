@@ -6,6 +6,7 @@ public class ShowRobot : Tutorial
 {
     public GameObject enemy;
     public GameObject fire;
+    public GameObject breach;
     public AllyController vaisseau;
     public GameObject entireMesh;
     public GameObject armMesh;
@@ -30,6 +31,7 @@ public class ShowRobot : Tutorial
 
             fire.SetActive(false);
             enemy.SetActive(false);
+            breach.SetActive(false);
             canvas.enabled = false;
             pm.enabled = false;
             armMesh.SetActive(false);

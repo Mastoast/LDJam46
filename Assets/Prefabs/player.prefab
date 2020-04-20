@@ -238,7 +238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7054477524584442765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.46, z: 0.22}
+  m_LocalPosition: {x: 0, y: 2.15, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7054477525043561765}
@@ -361,6 +361,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  maxDistanceFromShip: 200
+  attachedShip: {fileID: 0}
+  RespawnPoint: {fileID: 0}
   canMove: 1
 --- !u!114 &4198787704889609536
 MonoBehaviour:
@@ -424,6 +427,7 @@ MonoBehaviour:
   textAction: {fileID: 0}
   slider: {fileID: 0}
   animator: {fileID: 1993492111796965635}
+  shipmap: {fileID: 0}
   playerMovement: {fileID: 7054477525043561767}
   mouse: {fileID: 7054477524584442763}
   mg_Fire: {fileID: 0}
@@ -687,7 +691,7 @@ PrefabInstance:
     - target: {fileID: -1706552563030489457, guid: bf67c1212f8ba6748b7c8315fb0b586f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: bf67c1212f8ba6748b7c8315fb0b586f,
         type: 3}
@@ -702,7 +706,7 @@ PrefabInstance:
     - target: {fileID: -850217518581023298, guid: bf67c1212f8ba6748b7c8315fb0b586f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf67c1212f8ba6748b7c8315fb0b586f, type: 3}
