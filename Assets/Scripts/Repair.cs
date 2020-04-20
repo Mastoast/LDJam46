@@ -228,7 +228,7 @@ public class Repair : MonoBehaviour
         mg_Breach.LaunchMiniGame(_attachedGameobject);
 
         textAction.color = new Color(0.2f, 0.2f, 0.2f);
-        textAction.text = "Press the good keys !";
+        textAction.text = "Press the right keys !";
 
         selectTool.soldering.GetComponentInChildren<AudioSource>().Play();
 
@@ -278,6 +278,8 @@ public class Repair : MonoBehaviour
 
     IEnumerator SendBiduleAway()
     {
+        if (!_attachedGameobject.tag.Equals("Bidule")) yield break;
+
         GameObject bidule = _attachedGameobject;
 
         Vector3 vUp = bidule.transform.TransformDirection(Vector3.up);
