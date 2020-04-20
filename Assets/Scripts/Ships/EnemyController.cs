@@ -53,36 +53,45 @@ public class EnemyController : ShipController
     {
         _justSpawned = true;
 
-        GameObject hitPos = new GameObject();
-        hitPos.transform.position = hit.point;
-        hitPos.transform.parent = target.transform;
-
-        GameObject go = Instantiate(bidule, target.transform);
-
-        Vector3[] n = shipCollider.sharedMesh.normals;
-        int[] tri = shipCollider.sharedMesh.triangles;
-
-        Vector3 n0 = n[tri[hit.triangleIndex * 3 + 0]];
-        Vector3 n1 = n[tri[hit.triangleIndex * 3 + 1]];
-        Vector3 n2 = n[tri[hit.triangleIndex * 3 + 2]];
-        Vector3 c = hit.barycentricCoordinate;
-        Vector3 normal = hit.transform.TransformDirection((n0 * c.x + n1 * c.y + n2 * c.z).normalized);
-
-        go.transform.up = normal;
-
-        while (Vector3.Distance(go.transform.localPosition, hitPos.transform.localPosition) > 1f)
+        float r = Random.Range(0f, 1f);
+        if (r < 0.33f)
         {
-            go.transform.localPosition = Vector3.MoveTowards(go.transform.localPosition, hitPos.transform.localPosition, Time.deltaTime * 20);
-
-            yield return new WaitForEndOfFrame();
+            // Don't spawn dat shit
+            yield return new WaitForSeconds(10);
         }
+        else
+        {
+            GameObject hitPos = new GameObject();
+            hitPos.transform.position = hit.point;
+            hitPos.transform.parent = target.transform;
 
-        GameObject b = Instantiate(breach, target.transform);
-        b.transform.localPosition = go.transform.localPosition;
-        b.transform.up = go.transform.up;
+            GameObject go = Instantiate(bidule, target.transform);
 
-        // Damages
-        target.GetComponent<AllyController>().hullPoints -= target.GetComponent<AllyController>().damageAmount;
+            Vector3[] n = shipCollider.sharedMesh.normals;
+            int[] tri = shipCollider.sharedMesh.triangles;
+
+            Vector3 n0 = n[tri[hit.triangleIndex * 3 + 0]];
+            Vector3 n1 = n[tri[hit.triangleIndex * 3 + 1]];
+            Vector3 n2 = n[tri[hit.triangleIndex * 3 + 2]];
+            Vector3 c = hit.barycentricCoordinate;
+            Vector3 normal = hit.transform.TransformDirection((n0 * c.x + n1 * c.y + n2 * c.z).normalized);
+
+            go.transform.up = normal;
+
+            while (Vector3.Distance(go.transform.localPosition, hitPos.transform.localPosition) > 1f)
+            {
+                go.transform.localPosition = Vector3.MoveTowards(go.transform.localPosition, hitPos.transform.localPosition, Time.deltaTime * 20);
+
+                yield return new WaitForEndOfFrame();
+            }
+
+            GameObject b = Instantiate(breach, target.transform);
+            b.transform.localPosition = go.transform.localPosition + Vector3.up * 0.25f;
+            b.transform.up = go.transform.up;
+
+            // Damages
+            target.GetComponent<AllyController>().hullPoints -= target.GetComponent<AllyController>().damageAmount;
+        }
 
         _justSpawned = false;
     }
