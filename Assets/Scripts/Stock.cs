@@ -10,8 +10,8 @@ public class Stock : MonoBehaviour
     public Text textBonbonne;
     public Text textMetal;
 
-    int metal = 100;
-    int bonbonne = 100;
+    public int metal = 100;
+    public int bonbonne = 100;
 
     void Start()
     {
