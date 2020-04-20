@@ -5,33 +5,12 @@ using UnityEngine.UI;
 
 public class UI_ShowIndications : MonoBehaviour
 {
-    // Put this script anywhere
+    // Put this script on Ship Zone Triggers
 
     public Canvas canvas;
     public GameObject popupWindow;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) // Simulate damage taken
-        {
-            float r = Random.Range(0f, 1.1f);
-            string s = "";
-
-            if (r < 0.1f) s = "L'aile gauche a été touchée !";
-            else if (r < 0.2f) s = "L'aile droite a été touchée !";
-            else if (r < 0.3f) s = "L'aile gauche a été endommagée !";
-            else if (r < 0.4f) s = "L'aile droite a été endommagée !";
-            else if (r < 0.5f) s = "Le cockpit a été touchée !";
-            else if (r < 0.6f) s = "Le cockpit a été endommagé !";
-            else if (r < 0.7f) s = "Thomas est une chèvre !";
-            else if (r < 0.8f) s = "Hector est une anguille !";
-            else if (r < 0.9f) s = "Guillaume est un canard !";
-            else if (r < 1.0f) s = "Théo est une fourmi !";
-            else s = "Cyril est le plus beau et le plus fort !";
-
-            StartCoroutine(ShowIndications(s));
-        }
-    }
+    bool _isColliding = false;
 
     IEnumerator ShowIndications(string str)
     {
@@ -48,5 +27,25 @@ public class UI_ShowIndications : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         Destroy(window);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (_isColliding) return;
+        _isColliding = true;
+
+        if (other.tag.Equals("Breach"))
+            StartCoroutine(ShowIndications("Breach in " + name));
+
+        if (other.tag.Equals("Fire"))
+            StartCoroutine(ShowIndications("Fire in " + name));
+
+        StartCoroutine(Reset());
+    }
+
+    IEnumerator Reset()
+    {
+        yield return new WaitForEndOfFrame();
+        _isColliding = false;
     }
 }
