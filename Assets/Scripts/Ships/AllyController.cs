@@ -34,7 +34,7 @@ public class AllyController : ShipController
             );
         }
 
-        shipHealth.value = hullPoints / 100f;
+        //shipHealth.value = hullPoints / 100f;
 
         // Overall ship is too damaged => GAME OVER
         if (hullPoints <= 0f)
