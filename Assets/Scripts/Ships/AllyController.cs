@@ -10,6 +10,9 @@ public class AllyController : ShipController
     public float hullPoints = 100f;
     public float damageAmount = 7.5f;
 
+    //End of game timer
+    public Text timerRecord;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,13 +34,16 @@ public class AllyController : ShipController
             );
         }
 
-        shipHealth.value = hullPoints / 100f;
+        //shipHealth.value = hullPoints / 100f;
 
         // Overall ship is too damaged => GAME OVER
         if (hullPoints <= 0f)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
             gameOverWindow.SetActive(true);
-            gameOverWindow.GetComponentInChildren<Text>().text = "The ship took too much damage and is now broken.\nGame Over.";
+            gameOverWindow.GetComponentInChildren<Text>().text = "GAMEOVER\n The ship took too much damage.";
+            timerRecord.text = "Timer : " + System.Math.Round(Time.timeSinceLevelLoad, 2) + " s";
         }
     }
 

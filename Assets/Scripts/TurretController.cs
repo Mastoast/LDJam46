@@ -5,15 +5,16 @@ using UnityEngine;
 public class TurretController : MonoBehaviour
 {
     public LaserController laser;
+    public AudioClip[] laserClips;
+    public SoundController sound;
     
+
     private MeshCollider shipCollider;
-    private AudioSource source;
 
     bool _justShot = false;
 
     void Start()
     {
-        source = GetComponent<AudioSource>();
         shipCollider = GameObject.FindGameObjectWithTag("Ship").GetComponentInChildren<MeshCollider>();
     }
 
@@ -40,9 +41,10 @@ public class TurretController : MonoBehaviour
        
         LaserController clone = Instantiate(laser, transform.position, transform.rotation);
 
-        source.pitch = Random.Range(0.85f, 1.15f);
-        source.Play();
-        
+        // Create sound effect
+        SoundController ssound = Instantiate(sound, transform.position, transform.rotation);
+        ssound.PlayClip(laserClips[Random.Range(0, laserClips.Length - 1)]);
+
         yield return new WaitForSeconds(Random.Range(1.5f, 3.0f));
 
         _justShot = false;
