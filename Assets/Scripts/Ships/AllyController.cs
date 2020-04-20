@@ -10,6 +10,9 @@ public class AllyController : ShipController
     public float hullPoints = 100f;
     public float damageAmount = 7.5f;
 
+    //End of game timer
+    public Text timerRecord;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +43,7 @@ public class AllyController : ShipController
             Time.timeScale = 0f;
             gameOverWindow.SetActive(true);
             gameOverWindow.GetComponentInChildren<Text>().text = "GAMEOVER\n The ship took too much damage.";
+            timerRecord.text = "Timer : " + System.Math.Round(Time.timeSinceLevelLoad, 2) + " s";
         }
     }
 
