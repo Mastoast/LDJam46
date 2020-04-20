@@ -52,6 +52,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 250
   rotationSpeed: 1.5
+  bidule: {fileID: 7454480895943421260, guid: ea752fe71f44a894a8a51bcdae7aed65, type: 3}
+  breach: {fileID: 6604659309401413346, guid: 303b228131c2f274a99070d7dac75c57, type: 3}
 --- !u!1001 &1747583564488952267
 PrefabInstance:
   m_ObjectHideFlags: 0
