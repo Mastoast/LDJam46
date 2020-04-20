@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ShipMap : MonoBehaviour
 {
+    public GameObject gameOverWindow;
+
     public Image map_AileGauche;
     public Image map_AileDroite;
     public Image map_Avant;
@@ -28,6 +30,12 @@ public class ShipMap : MonoBehaviour
     public Sprite red_Avant;
     public Sprite red_Centre;
     public Sprite red_Arriere;
+
+    public Sprite black_AileGauche;
+    public Sprite black_AileDroite;
+    public Sprite black_Avant;
+    public Sprite black_Centre;
+    public Sprite black_Arriere;
 
     int dmg_AileGauche = 0;
     int dmg_AileDroite = 0;
@@ -59,6 +67,26 @@ public class ShipMap : MonoBehaviour
             else
                 map_AileGauche.sprite = red_AileGauche;
         }
+
+        if (dmg_AileGauche == 8)
+        {
+            // Left wing is fully broken => GAME OVER
+            map_AileGauche.sprite = black_AileGauche;
+            gameOverWindow.SetActive(true);
+            gameOverWindow.GetComponentInChildren<Text>().text = "The left wing hasn't been repaired and broke.\nGame Over.";
+
+        }
+    }
+
+    public float GetLeftWing()
+    {
+        if (map_AileGauche.sprite == red_AileGauche)
+            return 0.33f;
+
+        if (map_AileGauche.sprite == orange_AileGauche)
+            return 0.66f;
+
+        return 1f;
     }
 
     public void RightWing(int dmg)
@@ -85,8 +113,28 @@ public class ShipMap : MonoBehaviour
             else
                 map_AileDroite.sprite = red_AileDroite;
         }
+
+        if (dmg_AileDroite == 8)
+        {
+            // Right wing is fully broken => GAME OVER
+            map_AileDroite.sprite = black_AileDroite;
+            gameOverWindow.SetActive(true);
+            gameOverWindow.GetComponentInChildren<Text>().text = "The right wing hasn't been repaired and broke.\nGame Over.";
+
+        }
     }
-    
+
+    public float GetRightWing()
+    {
+        if (map_AileDroite.sprite == red_AileDroite)
+            return 0.33f;
+
+        if (map_AileDroite.sprite == orange_AileDroite)
+            return 0.66f;
+
+        return 1f;
+    }
+
     public void Front(int dmg)
     {
         dmg_Avant += dmg;
@@ -112,6 +160,26 @@ public class ShipMap : MonoBehaviour
             else
                 map_Avant.sprite = red_Avant;
         }
+
+        if (dmg_Avant == 8)
+        {
+            // Front is fully broken => GAME OVER
+            map_Avant.sprite = black_Avant;
+            gameOverWindow.SetActive(true);
+            gameOverWindow.GetComponentInChildren<Text>().text = "The front hasn't been repaired and broke.\nGame Over.";
+
+        }
+    }
+
+    public float GetFront()
+    {
+        if (map_Avant.sprite == red_Avant)
+            return 0.33f;
+
+        if (map_Avant.sprite == orange_Avant)
+            return 0.66f;
+
+        return 1f;
     }
 
     public void Center(int dmg)
@@ -138,7 +206,25 @@ public class ShipMap : MonoBehaviour
             else
                 map_Centre.sprite = red_Centre;
         }
-        
+
+        if (dmg_Centre == 8)
+        {
+            // Center is fully broken => GAME OVER
+            map_Centre.sprite = black_Centre;
+            gameOverWindow.SetActive(true);
+            gameOverWindow.GetComponentInChildren<Text>().text = "The center hasn't been repaired and broke.\nGame Over.";
+        }
+    }
+
+    public float GetCenter()
+    {
+        if (map_Centre.sprite == red_Centre)
+            return 0.33f;
+
+        if (map_Centre.sprite == orange_Centre)
+            return 0.66f;
+
+        return 1f;
     }
 
     public void Back(int dmg)
@@ -165,5 +251,25 @@ public class ShipMap : MonoBehaviour
             else
                 map_Arriere.sprite = red_Arriere;
         }
+
+        if (dmg_Arriere == 8)
+        {
+            // Back is fully broken => GAME OVER
+            map_Arriere.sprite = black_Arriere;
+            gameOverWindow.SetActive(true);
+            gameOverWindow.GetComponentInChildren<Text>().text = "The back hasn't been repaired and broke.\nGame Over.";
+        }
     }
+
+    public float GetBack()
+    {
+        if (map_Arriere.sprite == red_Arriere)
+            return 0.33f;
+
+        if (map_Arriere.sprite == orange_Arriere)
+            return 0.66f;
+
+        return 1f;
+    }
+
 }

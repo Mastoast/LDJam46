@@ -29,9 +29,4 @@ public class DamageManager : MonoBehaviour
             source.Play();
         }
     }
-
-    public void OnDestroy()
-    {
-        ship.RepairedPart();
-    }
 }

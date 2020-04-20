@@ -12,6 +12,8 @@ public class Repair : MonoBehaviour
     public Text textAction;
     public Slider slider;
     public Animator animator;
+
+    public AllyController ally;
     public ShipMap shipmap;
 
     // Freeze player movement and camera
@@ -315,22 +317,27 @@ public class Repair : MonoBehaviour
         switch (position)
         {
             case "AileGauche":
+                ally.RepairedPart(shipmap.GetLeftWing());
                 shipmap.LeftWing(-1);
                 break;
 
             case "AileDroite":
+                ally.RepairedPart(shipmap.GetRightWing());
                 shipmap.RightWing(-1);
                 break;
 
             case "Avant":
+                ally.RepairedPart(shipmap.GetFront());
                 shipmap.Front(-1);
                 break;
 
             case "Centre":
+                ally.RepairedPart(shipmap.GetCenter());
                 shipmap.Center(-1);
                 break;
 
             case "Arriere":
+                ally.RepairedPart(shipmap.GetBack());
                 shipmap.Back(-1);
                 break;
         }
