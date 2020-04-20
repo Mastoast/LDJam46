@@ -12,11 +12,13 @@ public class DamageManager : MonoBehaviour
 
     void Start()
     {
+        // Hit sound
         source = GetComponent<AudioSource>();
         source.clip = touchedHull;
         source.loop = false;
         source.Play();
 
+        // Ship reference
         ship = GetComponentInParent<AllyController>();
     }
 
