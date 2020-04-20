@@ -2336,20 +2336,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1662438755}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1662438757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662438756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192b0ec35d25b184bbc77b396340a75b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Starship: {fileID: 0}
-  Speed: 20
 --- !u!4 &1662438759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3d509e27112a1b74e9efcdd3f5445684,
