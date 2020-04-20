@@ -21,7 +21,14 @@ public class AllyController : ShipController
     // Update is called once per frame
     void Update()
     {
-
+        if (Time.frameCount%(60*8) == 1)
+        {
+            target.transform.position = new Vector3(
+                Random.Range(-2000, 2000),
+                Random.Range(-2000, 2000),
+                Random.Range(-2000, 2000)
+            );
+        }
     }
 
     void FixedUpdate()

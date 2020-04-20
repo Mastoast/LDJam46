@@ -10,7 +10,7 @@ class AllyPilot : Pilot
     
     public override Vector3 GetRotationDecision(Transform current, Transform target)
     {
-        Vector3 direction = Vector3.forward;
+        Vector3 direction = (target.position - current.position).normalized;
 
         return direction;
     }

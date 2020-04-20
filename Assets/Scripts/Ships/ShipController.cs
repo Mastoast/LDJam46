@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
-    public float movementSpeed = 50.0f;
-    public float rotationSpeed = 2.3f;
+    public float movementSpeed = 250.0f;
+    public float rotationSpeed = 0.5f;
     public Pilot pilot;
 
     protected Vector3 velocity;
