@@ -179,7 +179,7 @@ public class Repair : MonoBehaviour
         // Mini Game
         mg_Fire.LaunchMiniGame(_goToRepair);
 
-        textAction.text = "Spam [A] to extinguish the fire !";
+        textAction.text = "Spam [Space] to extinguish the fire !";
 
         float timer = 0f;
         bool emit = false;

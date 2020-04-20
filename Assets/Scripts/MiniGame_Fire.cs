@@ -56,7 +56,7 @@ public class MiniGame_Fire : MonoBehaviour
                 jaugeCoef = 0.4f;
             }
 
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 sliderJauge.value += 0.1f * jaugeCoef;
             }

@@ -7,12 +7,13 @@ public class UI_ShowIndications : MonoBehaviour
 {
     // Put this script on Ship Zone Triggers
 
+    public ShipMap shipMapScript;
     public Canvas canvas;
     public GameObject popupWindow;
 
     bool _isColliding = false;
 
-    IEnumerator ShowIndications(string str)
+    IEnumerator ShowIndications(string type, string position)
     {
         GameObject window = Instantiate(popupWindow, canvas.transform);
 
@@ -21,7 +22,37 @@ public class UI_ShowIndications : MonoBehaviour
 
         window.transform.position = new Vector3(x, y, 0f);
 
-        window.GetComponentInChildren<Text>().text = str;
+        string p = "";
+
+        switch (position)
+        {
+            case "ColliderAileGauche":
+                shipMapScript.LeftWing();
+                p = "left wing";
+                break;
+
+            case "ColliderAileDroite":
+                shipMapScript.RightWing();
+                p = "right wing";
+                break;
+
+            case "ColliderAvant":
+                shipMapScript.Front();
+                p = "front";
+                break;
+
+            case "ColliderCentre":
+                shipMapScript.Center();
+                p = "center";
+                break;
+
+            case "ColliderArriere":
+                shipMapScript.Back();
+                p = "back";
+                break;
+        }
+
+        window.GetComponentInChildren<Text>().text = type + " in the " + p + " !";
 
         // Wait for 5 seconds
         yield return new WaitForSeconds(5);
@@ -35,10 +66,10 @@ public class UI_ShowIndications : MonoBehaviour
         _isColliding = true;
 
         if (other.tag.Equals("Breach"))
-            StartCoroutine(ShowIndications("Breach in " + name));
+            StartCoroutine(ShowIndications("Breach", name));
 
         if (other.tag.Equals("Fire"))
-            StartCoroutine(ShowIndications("Fire in " + name));
+            StartCoroutine(ShowIndications("Fire", name));
 
         StartCoroutine(Reset());
     }
