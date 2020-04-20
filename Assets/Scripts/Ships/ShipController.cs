@@ -35,7 +35,10 @@ public class ShipController : MonoBehaviour
         {
             // Handle rotation
             Vector3 addAngle = pilot.GetRotationDecision(transform, target.transform) * (Time.fixedDeltaTime * rotationSpeed);
-            transform.forward += addAngle;
+            if (addAngle != Vector3.zero)
+            {
+                transform.forward += addAngle;
+            }
 
             // Handle velocity
             Vector3 addPosition = transform.forward;
