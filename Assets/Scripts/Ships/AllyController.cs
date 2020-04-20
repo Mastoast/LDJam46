@@ -35,6 +35,8 @@ public class AllyController : ShipController
 
         if (hullPoints <= 0f)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
             gameOverWindow.SetActive(true);
         }
     }
