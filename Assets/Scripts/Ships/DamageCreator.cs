@@ -25,11 +25,12 @@ public class DamageCreator : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Laser"))
         {
+            // Create a breach
             Vector3 impactPoint = collision.GetContact(0).point;
             Quaternion impactAngle = Quaternion.identity;
             impactAngle.eulerAngles = collision.GetContact(0).normal;
-            GameObject newImpact = Instantiate(breach, impactPoint, impactAngle);
-            newImpact.transform.SetParent(transform);
+            GameObject newImpact = Instantiate(breach, impactPoint, impactAngle, ship.transform);
+            // Damage
             DamageToHull();
         }
     }
