@@ -5,9 +5,15 @@ using UnityEngine;
 public class TurretController : MonoBehaviour
 {
     public LaserController laser;
-    public MeshCollider shipCollider;
+    
+    private MeshCollider shipCollider;
 
     bool _justShot = false;
+
+    void Start()
+    {
+        shipCollider = GameObject.FindGameObjectWithTag("Ship").GetComponentInChildren<MeshCollider>();
+    }
 
     void Update()
     {
@@ -33,7 +39,7 @@ public class TurretController : MonoBehaviour
        
         LaserController clone = Instantiate(laser, transform.position, transform.rotation);
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(Random.Range(0.5f, 3.0f));
 
         _justShot = false;
     }
