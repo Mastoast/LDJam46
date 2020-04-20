@@ -435,6 +435,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1019491962}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &158900334 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4039376466579799000, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 509313634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &205770780
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 2
-  explanation: Do the ZQSD thingy
+  explanation: For starters, try to move around, using WASD or the Arrow Keys.
   entireMesh: {fileID: 585967856}
   armMesh: {fileID: 1093475640}
   cameraRear: {fileID: 2014488998}
@@ -572,7 +584,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 404208907}
+  - {fileID: 1929859666}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -763,7 +775,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 8
-  explanation: Oh no ! A bidule as landed on our ship and has created a breach !
+  explanation: Oh no ! A Bidule as landed on our ship and has created a breach !
+    Put it into orbit by punching it out with E !
   bidule: {fileID: 877987084}
   breach: {fileID: 1159827743}
   cameraBidule: {fileID: 379105415}
@@ -856,83 +869,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &404208904
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 404208907}
-  - component: {fileID: 404208906}
-  - component: {fileID: 404208905}
-  m_Layer: 5
-  m_Name: Text_Tutorial
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &404208905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404208904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.8039216, g: 0.8039216, b: 0.8039216, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: ACTION TEXT
---- !u!222 &404208906
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404208904}
-  m_CullTransparentMesh: 0
---- !u!224 &404208907
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404208904}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 255846825}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 196.8, y: -182}
-  m_SizeDelta: {x: 383.57715, y: 356.05887}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &405715585
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +913,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 0
-  explanation: Say hi
+  explanation: Welcome to Starship & Hull ! You will have the responsibility to control
+    the repair drone 8u-11, or "Hull" as the humans in the starship call it.
   enemy: {fileID: 92220821}
   fire: {fileID: 452480491}
   breach: {fileID: 1159827743}
@@ -1040,7 +977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 13
   explanation: Now that you have the materials required, equip your soldering tool
-    with Alpha2 and fix the breach by playing it's minigame.
+    with 2 and fix the breach by playing it's minigame.
   problem: {fileID: 1159827743}
 --- !u!114 &451342866 stripped
 MonoBehaviour:
@@ -1060,6 +997,160 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1951582813}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &509313634
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 255846825}
+    m_Modifications:
+    - target: {fileID: 4039376466579799000, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466579799000, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466579799000, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466579799006, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466579799006, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466579799006, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 186.0102
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466579799006, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 263.7719
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 125.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -164.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 234.90765
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 317.9628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039376466786161845, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+        type: 3}
+      propertyPath: m_Name
+      value: Popup_Window
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a35deacc1b5260e4fbc7c34e7870efd3, type: 3}
 --- !u!1001 &543537749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1178,7 +1269,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 3
-  explanation: Go on top of the command center
+  explanation: Before trying to fix anything, let's check if your magnetic wheels
+    work as intended. Try to climp on top of the control center behind you.
   pcol: {fileID: 1642676329}
   triggerZone: {fileID: 1917970878}
 --- !u!1 &585967856 stripped
@@ -1383,7 +1475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorials: []
-  text: {fileID: 404208905}
+  text: {fileID: 158900334}
 --- !u!4 &785837635
 Transform:
   m_ObjectHideFlags: 0
@@ -1907,7 +1999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 1
-  explanation: Look at the botiful ship
+  explanation: Your goal is to keep the Starship running by extinguishing fires and
+    breaches caused by our enemies assaults.
   cameraRobot: {fileID: 1694703339}
   cameraRear: {fileID: 2014488998}
 --- !u!1 &1055386971
@@ -2046,7 +2139,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 5
-  explanation: "Oh non le m\xE9chant il a tout cass\xE9"
+  explanation: One of the enemy's blaster shot has started a fire on the right wing
+    of the ship ! Take your extinguisher by pressing 1, and put the fire down by
+    pressing E while looking at it. Further instructions will be given in your HUD.
   cameraEnemy: {fileID: 695772449}
   cameraFire: {fileID: 1812508877}
   fire: {fileID: 452480491}
@@ -2174,7 +2269,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 7
-  explanation: Go to the fire, press E, and do the minigame
+  explanation: One of the enemy's blaster shot has started a fire on the right wing
+    of the ship ! Take your extinguisher by pressing 1, and put the fire down by
+    pressing E while looking at it. Further instructions will be given in your HUD.
   problem: {fileID: 452480491}
 --- !u!1 &1352321558
 GameObject:
@@ -2220,7 +2317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 9
-  explanation: Go kick his ass with E !
+  explanation: Oh no ! A Bidule as landed on our ship and has created a breach !
+    Put it into orbit by punching it out with E !
   problem: {fileID: 877987084}
 --- !u!114 &1367610464 stripped
 MonoBehaviour:
@@ -2278,7 +2376,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 6
-  explanation: Quick, equip your extinguisher !
+  explanation: One of the enemy's blaster shot has started a fire on the right wing
+    of the ship ! Take your extinguisher by pressing 1, and put the fire down by
+    pressing E while looking at it. Further instructions will be given in your HUD.
   cameraFire: {fileID: 1812508877}
   cameraPlayer: {fileID: 1693716400}
   pm: {fileID: 1972573103}
@@ -2341,7 +2441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 12
   explanation: Now that you have the materials required, equip your soldering tool
-    with Alpha2 and fix the breach by playing it's minigame.
+    with 2 and fix the breach by playing it's minigame.
   pm: {fileID: 1972573103}
   canvas: {fileID: 906869405}
 --- !u!1 &1674095346
@@ -2388,8 +2488,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 11
-  explanation: You must repair the breach this damn Bidule has created, but you're
-    out of materials. Go to the restock point and press E to restock materials.
+  explanation: Great ! You must repair the breach this damn Bidule has created, but
+    you're out of materials. Go to the restock point and press E to restock materials.
   stock: {fileID: 859023930}
 --- !u!20 &1693716400 stripped
 Camera:
@@ -2619,7 +2719,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 4
-  explanation: "Look at the m\xE9chant !"
+  explanation: Watch out, this is one of the enemies I was talking about earlier.
+    They will not hesitate to shot the Starship at sight !
   enemy: {fileID: 92220821}
   cameraEnemy: {fileID: 695772449}
   cameraPlayer: {fileID: 1693716400}
@@ -2717,6 +2818,12 @@ Transform:
   m_Father: {fileID: 1091912621}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1929859666 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4039376466786161844, guid: a35deacc1b5260e4fbc7c34e7870efd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 509313634}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1951582813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3265,8 +3372,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 10
-  explanation: You must repair the breach this damn Bidule has created, but you're
-    out of materials. Go to the restock point and press E to restock materials.
+  explanation: Great ! You must repair the breach this damn Bidule has created, but
+    you're out of materials. Go to the restock point and press E to restock materials.
   cameraRefill: {fileID: 640885341}
   cameraPlayer: {fileID: 1693716400}
   pm: {fileID: 1972573103}
