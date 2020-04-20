@@ -33,9 +33,11 @@ public class AllyController : ShipController
 
         shipHealth.value = hullPoints / 100f;
 
+        // Overall ship is too damaged => GAME OVER
         if (hullPoints <= 0f)
         {
             gameOverWindow.SetActive(true);
+            gameOverWindow.GetComponentInChildren<Text>().text = "The ship took too much damage and is now broken.\nGame Over.";
         }
     }
 
@@ -45,12 +47,8 @@ public class AllyController : ShipController
         Move();
     }
 
-    public void RepairedPart()
+    public void RepairedPart(float coef)
     {
-        hullPoints += damageAmount;
-
-        // IDEA :
-        // If zone is Orange, recover only 2/3 of damageAmount
-        // If zone is Red, recover only 1/3 of damageAmount
+        hullPoints += damageAmount * coef;
     }
 }

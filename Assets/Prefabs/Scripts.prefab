@@ -69,6 +69,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBonbonne: {fileID: 0}
   textMetal: {fileID: 0}
+  metal: 100
+  bonbonne: 100
 --- !u!114 &5596209063488962767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfae78b6ae97ab647b38f3b5f16428da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipMap: {fileID: 0}
+  gameOverWindow: {fileID: 0}
   map_AileGauche: {fileID: 0}
   map_AileDroite: {fileID: 0}
   map_Avant: {fileID: 0}
@@ -131,3 +133,8 @@ MonoBehaviour:
   red_Avant: {fileID: 21300000, guid: cda5e204c86bdce45b967d0e171fd8f5, type: 3}
   red_Centre: {fileID: 21300000, guid: ccbee482dbacff74b85f151a02bc2c18, type: 3}
   red_Arriere: {fileID: 21300000, guid: 755ffd9b40668bd4d974adbd31b00d39, type: 3}
+  black_AileGauche: {fileID: 21300000, guid: 03e09436651a2b747bf2a48160c33678, type: 3}
+  black_AileDroite: {fileID: 21300000, guid: fdaaee63ba7c5fc45b395292fd520dc6, type: 3}
+  black_Avant: {fileID: 21300000, guid: 83ffe9567abd23e40a347c09de1fac16, type: 3}
+  black_Centre: {fileID: 21300000, guid: 26682f309d8cdfc41abb2ecc4c0a776d, type: 3}
+  black_Arriere: {fileID: 21300000, guid: 7e0fee74262272043812cb1da84cce8e, type: 3}
