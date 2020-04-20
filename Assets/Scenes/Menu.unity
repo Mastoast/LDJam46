@@ -677,7 +677,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SampleScene
+          m_StringArgument: Tuto
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &749991868
@@ -780,7 +780,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &948839428
 GameObject:
@@ -1143,7 +1143,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1101198022
 GameObject:
@@ -1798,7 +1798,7 @@ RectTransform:
   - {fileID: 948839429}
   - {fileID: 1775917286}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2221,7 +2221,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 3d509e27112a1b74e9efcdd3f5445684,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3d509e27112a1b74e9efcdd3f5445684,
         type: 3}
@@ -2529,6 +2529,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1966566785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7454480895943421260, guid: ea752fe71f44a894a8a51bcdae7aed65,
+    type: 3}
+  m_PrefabInstance: {fileID: 2093954200}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1991147521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2759,7 +2765,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2053969915
 MonoBehaviour:
@@ -2773,8 +2779,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192b0ec35d25b184bbc77b396340a75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Starship: {fileID: 1662438756}
-  Speed: 0.3
+  starship: {fileID: 1662438756}
+  bidule: {fileID: 1966566785}
+  starshipMovementSpeed: 0.3
+  biduleMovementSpeed: 0.05
+  biduleRotationSpeed: 1
 --- !u!1 &2082975006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,3 +2913,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082975006}
   m_CullTransparentMesh: 0
+--- !u!1001 &2093954200
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3882887448330763273, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 506.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882887448330763273, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882887448330763273, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1115.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882887448330763273, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.15157361
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882887448330763273, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.98696256
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882887448330763273, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.008217262
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882887448330763273, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.053506225
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882887448330763273, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882887448330763273, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882887448330763273, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 173.794
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882887448330763273, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 17.462
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454480895943421260, guid: ea752fe71f44a894a8a51bcdae7aed65,
+        type: 3}
+      propertyPath: m_Name
+      value: bidule
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea752fe71f44a894a8a51bcdae7aed65, type: 3}
