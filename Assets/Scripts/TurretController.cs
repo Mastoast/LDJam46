@@ -44,7 +44,7 @@ public class TurretController : MonoBehaviour
         source.pitch = Random.Range(0.85f, 1.15f);
         source.Play();
         
-        yield return new WaitForSeconds(Random.Range(0.5f, 3.0f));
+        yield return new WaitForSeconds(Random.Range(1.5f, 3.0f));
 
         _justShot = false;
     }
