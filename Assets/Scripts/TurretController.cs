@@ -32,7 +32,6 @@ public class TurretController : MonoBehaviour
                 else
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             }
-
     }
 
     IEnumerator Shoot()
