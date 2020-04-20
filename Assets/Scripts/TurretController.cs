@@ -14,8 +14,17 @@ public class TurretController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
             if (hit.collider == shipCollider)
+            {
                 if (!_justShot)
+                {
+                    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
                     StartCoroutine(Shoot());
+
+                }
+                else
+                    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            }
+
     }
 
     IEnumerator Shoot()
