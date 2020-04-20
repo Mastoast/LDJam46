@@ -39,7 +39,7 @@ public class AllyController : ShipController
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
             gameOverWindow.SetActive(true);
-            gameOverWindow.GetComponentInChildren<Text>().text = "The ship took too much damage and is now broken.\nGame Over.";
+            gameOverWindow.GetComponentInChildren<Text>().text = "GAMEOVER\n The ship took too much damage.";
         }
     }
 
