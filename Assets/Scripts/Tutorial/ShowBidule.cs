@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShowBidule : Tutorial
 {
     public GameObject bidule;
+    public GameObject breach;
     public Camera cameraBidule;
     public Camera cameraPlayer;
     public PlayerMovement pm;
@@ -20,6 +21,7 @@ public class ShowBidule : Tutorial
             pm.enabled = false;
             canvas.enabled = false;
             bidule.SetActive(true);
+            breach.SetActive(true);
 
             cameraPlayer.enabled = false;
             cameraBidule.enabled = true;
