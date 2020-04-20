@@ -5,19 +5,28 @@ using UnityEngine;
 public class TurretController : MonoBehaviour
 {
     public LaserController laser;
+    public MeshCollider shipCollider;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    bool _justShot = false;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Time.renderedFrameCount % 300 == 1)
-        {
-            LaserController clone = Instantiate(laser, transform.position, transform.rotation);
-        }
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+            if (hit.collider == shipCollider)
+                if (!_justShot)
+                    StartCoroutine(Shoot());
+    }
+
+    IEnumerator Shoot()
+    {
+        _justShot = true;
+
+        Debug.Log("Laser Spawn");
+        LaserController clone = Instantiate(laser, transform.position, transform.rotation);
+
+        yield return new WaitForSeconds(1);
+
+        _justShot = false;
     }
 }

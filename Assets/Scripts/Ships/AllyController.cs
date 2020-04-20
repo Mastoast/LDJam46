@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AllyController : ShipController
 {
-    public GameObject breach;
-    public GameObject fire;
     public float hullPoints = 100f;
     public float damageAmount = 10f;
 
@@ -36,34 +34,8 @@ public class AllyController : ShipController
         GetDecision();
         Move();
     }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Laser"))
-        {
-            Vector3 impactPoint = collision.GetContact(0).point;
-            Quaternion impactAngle = Quaternion.identity;
-            impactAngle.eulerAngles = collision.GetContact(0).normal;
-            GameObject newImpact = Instantiate(breach, impactPoint, impactAngle);
-            newImpact.transform.SetParent(transform);
-            DamageToHull();
-        }
-    }
-
-    public void CreateImpact()
-    {
-
-    }
-
-    //Damage Manager
-    public void DamageToHull()
-    {
-        hullPoints -= damageAmount;
-    }
-
     public void RepairedPart()
     {
         hullPoints += damageAmount;
     }
-
 }
