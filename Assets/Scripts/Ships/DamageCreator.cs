@@ -29,7 +29,10 @@ public class DamageCreator : MonoBehaviour
             Vector3 impactPoint = collision.GetContact(0).point;
             Quaternion impactAngle = Quaternion.identity;
             impactAngle.eulerAngles = collision.GetContact(0).normal;
-            GameObject newImpact = Instantiate(breach, impactPoint, impactAngle, ship.transform);
+
+            // Impact
+            GameObject newImpact = Instantiate(fire, impactPoint, impactAngle, ship.transform);
+
             // Damage
             DamageToHull();
         }
