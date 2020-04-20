@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public void Start()
+    {
+        Time.timeScale = 1f;
+    }
     //Menu Manager
     public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-        Time.timeScale = 1f;
+    {        
+        SceneManager.LoadScene(sceneName);       
     }
 
     public void QuitGame()

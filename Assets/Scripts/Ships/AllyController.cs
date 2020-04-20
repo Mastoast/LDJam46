@@ -36,8 +36,10 @@ public class AllyController : ShipController
         // Overall ship is too damaged => GAME OVER
         if (hullPoints <= 0f)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
             gameOverWindow.SetActive(true);
-            gameOverWindow.GetComponentInChildren<Text>().text = "The ship took too much damage and is now broken.\nGame Over.";
+            gameOverWindow.GetComponentInChildren<Text>().text = "GAMEOVER\n The ship took too much damage.";
         }
     }
 
