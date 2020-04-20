@@ -14,9 +14,6 @@ public class DamageManager : MonoBehaviour
     {
         // Hit sound
         source = GetComponent<AudioSource>();
-        source.clip = touchedHull;
-        source.loop = false;
-        source.Play();
 
         // Ship reference
         ship = GetComponentInParent<AllyController>();
@@ -24,10 +21,11 @@ public class DamageManager : MonoBehaviour
 
     void Update()
     {
-        if (source.clip != emitting && source.isPlaying)
+        if (source.clip != emitting && !source.isPlaying)
         {
             source.clip = emitting;
             source.loop = true;
+            source.pitch = 1.0f;
             source.Play();
         }
     }

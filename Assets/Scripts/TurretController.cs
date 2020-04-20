@@ -7,11 +7,13 @@ public class TurretController : MonoBehaviour
     public LaserController laser;
     
     private MeshCollider shipCollider;
+    private AudioSource source;
 
     bool _justShot = false;
 
     void Start()
     {
+        source = GetComponent<AudioSource>();
         shipCollider = GameObject.FindGameObjectWithTag("Ship").GetComponentInChildren<MeshCollider>();
     }
 
@@ -38,6 +40,9 @@ public class TurretController : MonoBehaviour
         _justShot = true;
        
         LaserController clone = Instantiate(laser, transform.position, transform.rotation);
+
+        source.pitch = Random.Range(0.85f, 1.15f);
+        source.Play();
         
         yield return new WaitForSeconds(Random.Range(0.5f, 3.0f));
 
