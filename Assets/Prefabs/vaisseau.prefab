@@ -242,8 +242,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52f7dd036a7b564493e5c39dad0b774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breach: {fileID: 6604659309401413346, guid: 303b228131c2f274a99070d7dac75c57, type: 3}
   fire: {fileID: 8448963882667274038, guid: 3d6c4bf6810e7634dbd0692da10436c1, type: 3}
+  touchedHullSounds:
+  - {fileID: 8300000, guid: adb853f1458a28a4da3a8ed2ae361346, type: 3}
+  - {fileID: 8300000, guid: f70c4414ee30c6448ab779d9f8cdda82, type: 3}
+  sound: {fileID: 310428924890856917, guid: 0fa51c82293f134428e7072434f5f8b2, type: 3}
 --- !u!1 &679237088860958587
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,6 +942,7 @@ MonoBehaviour:
   gameOverWindow: {fileID: 0}
   hullPoints: 100
   damageAmount: 10
+  timerRecord: {fileID: 0}
 --- !u!1 &3206345914924877209
 GameObject:
   m_ObjectHideFlags: 0
