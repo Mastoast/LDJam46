@@ -56,7 +56,7 @@ public class MiniGame_Breach : MonoBehaviour
 
         if (_keyFound)
         {
-            _particleSize -= 0.1f;
+            _particleSize -= 0.125f;
             _smoke.localScale = Vector3.one * _particleSize;
         }
 

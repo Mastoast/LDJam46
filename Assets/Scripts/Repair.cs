@@ -230,7 +230,7 @@ public class Repair : MonoBehaviour
         textAction.color = new Color(0.2f, 0.2f, 0.2f);
         textAction.text = "Press the right keys !";
 
-        selectTool.soldering.GetComponentInChildren<AudioSource>().Play();
+        selectTool.soldering.GetComponent<AudioSource>().Play();
 
         while (mg_Breach.playing)
         {
@@ -239,7 +239,7 @@ public class Repair : MonoBehaviour
 
         animator.SetTrigger("SolderStop");
 
-        selectTool.soldering.GetComponentInChildren<AudioSource>().Stop();
+        selectTool.soldering.GetComponent<AudioSource>().Stop();
         selectTool.soldering.GetComponentInChildren<ParticleSystem>().Stop();
 
         stock.ChangeMetal(-_repairCost);

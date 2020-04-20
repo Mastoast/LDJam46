@@ -834,6 +834,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3809160090702211489, guid: 701899e4b1acf7543b3d367e6adf2f5e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4198787704889609536, guid: 701899e4b1acf7543b3d367e6adf2f5e,
         type: 3}
       propertyPath: PlatformCollider

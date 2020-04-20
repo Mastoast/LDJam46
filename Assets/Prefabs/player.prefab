@@ -427,6 +427,7 @@ MonoBehaviour:
   textAction: {fileID: 0}
   slider: {fileID: 0}
   animator: {fileID: 1993492111796965635}
+  ally: {fileID: 0}
   shipmap: {fileID: 0}
   playerMovement: {fileID: 7054477525043561767}
   mouse: {fileID: 7054477524584442763}
@@ -567,17 +568,17 @@ PrefabInstance:
     - target: {fileID: 9034684096133448595, guid: cd43deaa4fe17ba41850f6cd890aa5a0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.04432856
+      value: 0.0004
       objectReference: {fileID: 0}
     - target: {fileID: 9034684096133448595, guid: cd43deaa4fe17ba41850f6cd890aa5a0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.024028119
+      value: -0.0074
       objectReference: {fileID: 0}
     - target: {fileID: 9034684096133448595, guid: cd43deaa4fe17ba41850f6cd890aa5a0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.8844183
+      value: 0.0193
       objectReference: {fileID: 0}
     - target: {fileID: 9034684096133448595, guid: cd43deaa4fe17ba41850f6cd890aa5a0,
         type: 3}
@@ -761,17 +762,17 @@ PrefabInstance:
     - target: {fileID: 5064206940158514070, guid: f769824b2f7efd34b989425d9da2e423,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.11089174
+      value: 0.004
       objectReference: {fileID: 0}
     - target: {fileID: 5064206940158514070, guid: f769824b2f7efd34b989425d9da2e423,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.012893192
+      value: -0.007
       objectReference: {fileID: 0}
     - target: {fileID: 5064206940158514070, guid: f769824b2f7efd34b989425d9da2e423,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.0385135
+      value: 0.0239
       objectReference: {fileID: 0}
     - target: {fileID: 5064206940158514070, guid: f769824b2f7efd34b989425d9da2e423,
         type: 3}
