@@ -977,7 +977,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 0
-  explanation: Say hi
+  explanation: Welcome to Starship & Hull ! You will have the responsibility to control
+    the repair drone 8u-11, or "Hull" as the humans in the starship call it.
   enemy: {fileID: 92220821}
   fire: {fileID: 452480491}
   breach: {fileID: 1159827743}
