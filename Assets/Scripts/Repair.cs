@@ -95,8 +95,22 @@ public class Repair : MonoBehaviour
                         }
                     }
 
-                    // If near a breach
-                    if (_onBreach)
+                    // If near Bidule
+                    if (_onBidule)
+                    {
+                        // If looking at Bidule
+                        RaycastHit hit;
+                        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit))
+                        {
+                            if (hit.transform.tag.Equals("Bidule"))
+                            {
+                                // Fight
+                                StartCoroutine(Fighting());
+                            }
+                        }
+                    }
+                    // Else, If near a breach and bidule is ded
+                    else if (_onBreach)
                     {
                         // If looking at the breach
                         RaycastHit hit;
@@ -116,21 +130,6 @@ public class Repair : MonoBehaviour
                                     else textAction.text = "Not enough Metal";
                                 }
                                 else textAction.text = "No Soldering tool equiped";
-                            }
-                        }
-                    }
-
-                    // If near Bidule
-                    if (_onBidule)
-                    {
-                        // If looking at Bidule
-                        RaycastHit hit;
-                        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit))
-                        {
-                            if (hit.transform.tag.Equals("Bidule"))
-                            {
-                                // Fight
-                                StartCoroutine(Fighting());
                             }
                         }
                     }
