@@ -12,7 +12,7 @@ public class TurretController : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
             if (hit.collider == shipCollider)
                 if (!_justShot)
                     StartCoroutine(Shoot());
@@ -21,8 +21,7 @@ public class TurretController : MonoBehaviour
     IEnumerator Shoot()
     {
         _justShot = true;
-
-        Debug.Log("Laser Spawn");
+       
         LaserController clone = Instantiate(laser, transform.position, transform.rotation);
         
         yield return new WaitForSeconds(0.5f);

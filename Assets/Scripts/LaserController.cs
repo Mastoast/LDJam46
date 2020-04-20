@@ -21,8 +21,7 @@ public class LaserController : MonoBehaviour
         collider = GetComponent<Collider>();
         bong = GetComponentInChildren<AudioSource>();
         line = GetComponent<LineRenderer>();
-
-        rb.AddForce(transform.forward * speed);
+        
 
         spawnTime = Time.time;
     }
@@ -30,6 +29,7 @@ public class LaserController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position += transform.forward * speed * Time.deltaTime;
         // Destroy if too far away
         if (Time.time - spawnTime > lifetime)
         {
