@@ -11,7 +11,6 @@ public class LaserController : MonoBehaviour
 
     private Rigidbody rb;
     private Collider collider;
-    private AudioSource bong;
     private LineRenderer line;
 
     // Start is called before the first frame update
@@ -19,7 +18,6 @@ public class LaserController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
-        bong = GetComponentInChildren<AudioSource>();
         line = GetComponent<LineRenderer>();
         
 
@@ -38,16 +36,7 @@ public class LaserController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (!bong.isPlaying)
-        {
-            // Hide visual
-            line.enabled = false;
-            collider.enabled = false;
-
-            // Play dead sound
-            bong.Play();
-            Destroy(gameObject, bong.clip.length);
-        }
+        Destroy(gameObject);
     }
 
 }

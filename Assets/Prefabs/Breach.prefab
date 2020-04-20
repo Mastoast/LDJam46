@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ship: {fileID: 0}
-  touchedHull: {fileID: 0}
-  emitting: {fileID: 0}
+  touchedHull: {fileID: 8300000, guid: adb853f1458a28a4da3a8ed2ae361346, type: 3}
+  emitting: {fileID: 8300000, guid: cb638e37be5cf404a82f97ab277138b5, type: 3}
 --- !u!82 &727874968
 AudioSource:
   m_ObjectHideFlags: 0
@@ -135,18 +135,18 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cb638e37be5cf404a82f97ab277138b5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f70c4414ee30c6448ab779d9f8cdda82, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0
-  MaxDistance: 5
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
