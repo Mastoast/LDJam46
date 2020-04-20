@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 class EnemyPilot : Pilot
 {
@@ -7,6 +6,7 @@ class EnemyPilot : Pilot
     public float minimalDistance = 350.0f;
 
     private float lastAssaultTime;
+    private Vector3 noise;
 
     public EnemyPilot(): base()
     {
@@ -25,6 +25,9 @@ class EnemyPilot : Pilot
             if (distance < minimalDistance)
             {
                 lastAssaultTime = Time.time;
+
+                // add random noise
+                noise = new Vector3(Random.Range(0.0f, 0.5f), Random.Range(0.0f, 0.5f), Random.Range(0.0f, 0.5f));
             }
 
             direction = (target.position - current.position).normalized;
@@ -38,8 +41,11 @@ class EnemyPilot : Pilot
             {
                 lastAssaultTime = 0.0f;
             }
-            // Wait for the next assault
-            return AddNoise(current.forward).normalized;
+            else
+            {
+                direction = noise;
+            }
+            
         }
 
         return direction;
