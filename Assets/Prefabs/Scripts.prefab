@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5596209063488962765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5596209063488962755}
+  - component: {fileID: 5596209063488962753}
+  - component: {fileID: 5596209063488962752}
+  - component: {fileID: 5596209063488962767}
+  - component: {fileID: 5596209063488962766}
+  - component: {fileID: 5596209063488962754}
+  m_Layer: 0
+  m_Name: Scripts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5596209063488962755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596209063488962765}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 396.17566, y: 376.32318, z: 1.4447031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5596209063488962753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596209063488962765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15264706e5714d349bfea1ef993c79e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentUI: {fileID: 0}
+  UI_NONE: {fileID: 21300000, guid: 2c6500940fb00eb4f9dbe0674e00b067, type: 3}
+  UI_EXTINCTEUR: {fileID: 21300000, guid: 5f8bc324b0051474a83154b4731b4f93, type: 3}
+  UI_SOUDEUR: {fileID: 21300000, guid: f3f772e0b7f222442a47a92acdb4584d, type: 3}
+  extinguisher: {fileID: 0}
+  soldering: {fileID: 0}
+  canMove: 1
+  tool: 0
+--- !u!114 &5596209063488962752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596209063488962765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a17971691531284d9a4a179ae8303c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBonbonne: {fileID: 0}
+  textMetal: {fileID: 0}
+--- !u!114 &5596209063488962767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596209063488962765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8195778807fb5444a963c868a15d617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderJauge: {fileID: 0}
+  playing: 0
+--- !u!114 &5596209063488962766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596209063488962765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a51e47a01ee2c54f809f67035b893e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  window: {fileID: 7089861511967945809, guid: 03472bfcf6c26c447ae073d5d0db7fc7, type: 3}
+  playing: 0
+--- !u!114 &5596209063488962754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596209063488962765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfae78b6ae97ab647b38f3b5f16428da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipMap: {fileID: 0}
+  map_AileGauche: {fileID: 0}
+  map_AileDroite: {fileID: 0}
+  map_Avant: {fileID: 0}
+  map_Centre: {fileID: 0}
+  map_Arriere: {fileID: 0}
+  yellow_AileGauche: {fileID: 21300000, guid: 6f9153a3df071f84198bc761f2c8d5d9, type: 3}
+  yellow_AileDroite: {fileID: 21300000, guid: 913cfdc44624b1843bdc50ed388dc68d, type: 3}
+  yellow_Avant: {fileID: 21300000, guid: f41bab396336592458357539fc776247, type: 3}
+  yellow_Centre: {fileID: 21300000, guid: 8792834f9e3aa214583999c0362e4056, type: 3}
+  yellow_Arriere: {fileID: 21300000, guid: 4e30d869fabd5584594ccbcc74f56056, type: 3}
+  orange_AileGauche: {fileID: 21300000, guid: 061eadbe1ea885f41bab7e215a652c1a, type: 3}
+  orange_AileDroite: {fileID: 21300000, guid: 7a012feaa992663478e6a07ace57adb4, type: 3}
+  orange_Avant: {fileID: 21300000, guid: 27458716f25b66b45af2bd80f4b7824e, type: 3}
+  orange_Centre: {fileID: 21300000, guid: 6644b7df8c452e249a79cf21fe8457bd, type: 3}
+  orange_Arriere: {fileID: 21300000, guid: 0647fa4ded0643f4e9dc501df6fc3382, type: 3}
+  red_AileGauche: {fileID: 21300000, guid: 2534b5b90df85e948b8c7fae9203a517, type: 3}
+  red_AileDroite: {fileID: 21300000, guid: a369ef85a6a899343a603455f85e6ce7, type: 3}
+  red_Avant: {fileID: 21300000, guid: cda5e204c86bdce45b967d0e171fd8f5, type: 3}
+  red_Centre: {fileID: 21300000, guid: ccbee482dbacff74b85f151a02bc2c18, type: 3}
+  red_Arriere: {fileID: 21300000, guid: 755ffd9b40668bd4d974adbd31b00d39, type: 3}
