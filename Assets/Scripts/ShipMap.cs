@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class ShipMap : MonoBehaviour
 {
-    public Image shipMap;
-
     public Image map_AileGauche;
     public Image map_AileDroite;
     public Image map_Avant;
@@ -41,8 +39,10 @@ public class ShipMap : MonoBehaviour
     {
         dmg_AileGauche += dmg;
 
+        map_AileGauche.gameObject.SetActive(true);
+
         if (dmg_AileGauche < 3)
-            map_AileGauche.gameObject.SetActive(true);
+            map_AileGauche.sprite = yellow_AileGauche;
         else if (dmg_AileGauche < 5)
             map_AileGauche.sprite = orange_AileGauche;
         else 
@@ -53,8 +53,10 @@ public class ShipMap : MonoBehaviour
     {
         dmg_AileDroite += dmg;
 
+        map_AileDroite.gameObject.SetActive(true);
+
         if (dmg_AileDroite < 3)
-            map_AileDroite.gameObject.SetActive(true);
+            map_AileDroite.sprite = yellow_AileDroite;
         else if (dmg_AileDroite < 5)
             map_AileDroite.sprite = orange_AileDroite;
         else
@@ -65,8 +67,10 @@ public class ShipMap : MonoBehaviour
     {
         dmg_Avant += dmg;
 
+        map_Avant.gameObject.SetActive(true);
+
         if (dmg_Avant < 3)
-            map_Avant.gameObject.SetActive(true);
+            map_Avant.sprite = yellow_Avant;
         else if (dmg_Avant < 5)
             map_Avant.sprite = orange_Avant;
         else
@@ -77,8 +81,10 @@ public class ShipMap : MonoBehaviour
     {
         dmg_Centre += dmg;
 
+        map_Centre.gameObject.SetActive(true);
+
         if (dmg_Centre < 3)
-            map_Centre.gameObject.SetActive(true);
+            map_Centre.sprite = yellow_Centre;
         else if (dmg_Centre < 5)
             map_Centre.sprite = orange_Centre;
         else
@@ -89,8 +95,10 @@ public class ShipMap : MonoBehaviour
     {
         dmg_Arriere += dmg;
 
+        map_Arriere.gameObject.SetActive(true);
+
         if (dmg_Arriere < 3)
-            map_Arriere.gameObject.SetActive(true);
+            map_Arriere.sprite = yellow_Arriere;
         else if (dmg_Arriere < 5)
             map_Arriere.sprite = orange_Arriere;
         else
