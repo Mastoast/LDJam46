@@ -22,11 +22,12 @@ public class Repair : MonoBehaviour
     public MiniGame_Fire mg_Fire;
     public MiniGame_Breach mg_Breach;
 
-    // GameObject that will be repaired
-    GameObject _goToRepair = null;
+    // GameObject near
+    GameObject _attachedGameobject = null;
 
     bool _onFire = false;
     bool _onBreach = false;
+    bool _onBidule = false;
     bool _onStock = false;
 
     bool _droneBusy = false;
@@ -50,7 +51,7 @@ public class Repair : MonoBehaviour
             // Action Key here is E
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (_goToRepair != null)
+                if (_attachedGameobject != null)
                 {
                     // If near a stock cube
                     if (_onStock)
@@ -64,9 +65,7 @@ public class Repair : MonoBehaviour
                                 // Refill metal and bonbonne
                                 StartCoroutine(Refilling());
                             }
-                            else textAction.text = "Not looking at the stock cube 2";
                         }
-                        else textAction.text = "Not looking at the stock cube 1";
                     }
 
                     // If near a fire cube
@@ -91,9 +90,7 @@ public class Repair : MonoBehaviour
                                 }
                                 else textAction.text = "No Extinguisher equiped";
                             }
-                            else textAction.text = "Not looking at the fire 2";
                         }
-                        else textAction.text = "Not looking at the fire 1";
                     }
 
                     // If near a breach
@@ -118,12 +115,24 @@ public class Repair : MonoBehaviour
                                 }
                                 else textAction.text = "No Soldering tool equiped";
                             }
-                            else textAction.text = "Not looking at the breach 2";
                         }
-                        else textAction.text = "Not looking at the breach 1";
+                    }
+
+                    // If near Bidule
+                    if (_onBidule)
+                    {
+                        // If looking at Bidule
+                        RaycastHit hit;
+                        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit))
+                        {
+                            if (hit.transform.tag.Equals("Bidule"))
+                            {
+                                // Fight
+                                StartCoroutine(Fighting());
+                            }
+                        }
                     }
                 }
-                else textAction.text = "Nothing to interact with";
             }
         }
     }
@@ -172,7 +181,7 @@ public class Repair : MonoBehaviour
         animator.SetTrigger("Extinguish");
 
         // Mini Game
-        mg_Fire.LaunchMiniGame(_goToRepair);
+        mg_Fire.LaunchMiniGame(_attachedGameobject);
 
         textAction.text = "Spam [Space] to extinguish the fire !";
 
@@ -215,7 +224,7 @@ public class Repair : MonoBehaviour
         animator.SetTrigger("Solder");
 
         // Mini Game
-        mg_Breach.LaunchMiniGame(_goToRepair);
+        mg_Breach.LaunchMiniGame(_attachedGameobject);
 
         textAction.color = new Color(0.2f, 0.2f, 0.2f);
         textAction.text = "Press the good keys !";
@@ -240,6 +249,54 @@ public class Repair : MonoBehaviour
         AfterAction();
     }
 
+    IEnumerator Fighting()
+    {
+        BeforeAction();
+
+        // Animation
+        animator.SetTrigger("Punch");
+
+        yield return new WaitForSeconds(1.5f);
+
+        // Send Bidule Far Away To Die
+        StartCoroutine(SendBiduleAway());
+
+        yield return new WaitForSeconds(0.5f);
+
+        _attachedGameobject = null;
+        _onBidule = false;
+
+        // Enable movement
+        _droneBusy = false;
+        playerMovement.canMove = true;
+        mouse.canMove = true;
+        selectTool.canMove = true;
+
+        textAction.text = "";
+    }
+
+    IEnumerator SendBiduleAway()
+    {
+        GameObject bidule = _attachedGameobject;
+
+        Vector3 vUp = bidule.transform.TransformDirection(Vector3.up);
+        Vector3 vFw = transform.TransformDirection(Vector3.forward);
+        Vector3 vDiag = vUp + vFw;
+
+        float timer = 4f;
+
+        while (timer > 0f)
+        {
+            timer -= Time.deltaTime;
+
+            bidule.transform.position = bidule.transform.position + (vDiag * 20f * Time.deltaTime);
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        Destroy(bidule);
+    }
+
     private void BeforeAction()
     {
         // Disable movement while repairing
@@ -252,8 +309,8 @@ public class Repair : MonoBehaviour
     private void AfterAction()
     {
         // Action
-        Destroy(_goToRepair);
-        _goToRepair = null;
+        Destroy(_attachedGameobject);
+        _attachedGameobject = null;
 
         switch (position)
         {
@@ -292,19 +349,25 @@ public class Repair : MonoBehaviour
         if (other.tag.Equals("Fire"))
         {
             _onFire = true;
-            _goToRepair = other.gameObject;
+            _attachedGameobject = other.gameObject;
             textAction.text = "Press E to put out fire";
         }
         else if (other.tag.Equals("Breach"))
         {
             _onBreach = true;
-            _goToRepair = other.gameObject;
+            _attachedGameobject = other.gameObject;
             textAction.text = "Press E to repair breach";
+        }
+        else if (other.tag.Equals("Bidule"))
+        {
+            _onBidule = true;
+            _attachedGameobject = other.gameObject;
+            textAction.text = "Press E to fight Bidule";
         }
         else if (other.tag.Equals("Stock"))
         {
             _onStock = true;
-            _goToRepair = other.gameObject;
+            _attachedGameobject = other.gameObject;
             textAction.text = "Press E to refill your metal and carboy";
         }
 
@@ -334,19 +397,25 @@ public class Repair : MonoBehaviour
         if (other.tag.Equals("Fire"))
         {
             _onFire = false;
-            _goToRepair = null;
+            _attachedGameobject = null;
             textAction.text = "";
         }
         else if (other.tag.Equals("Breach"))
         {
             _onBreach = false;
-            _goToRepair = null;
+            _attachedGameobject = null;
+            textAction.text = "";
+        }
+        else if (other.tag.Equals("Bidule"))
+        {
+            _onBidule = false;
+            _attachedGameobject = null;
             textAction.text = "";
         }
         else if (other.tag.Equals("Stock"))
         {
             _onStock = false;
-            _goToRepair = null;
+            _attachedGameobject = null;
             textAction.text = "";
         }
     }
