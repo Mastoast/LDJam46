@@ -10,14 +10,12 @@ public class LaserController : MonoBehaviour
     private float spawnTime;
 
     private Rigidbody rb;
-    private Collider collider;
     private LineRenderer line;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        collider = GetComponent<Collider>();
         line = GetComponent<LineRenderer>();
         
 
