@@ -4,7 +4,7 @@ using UnityEngine;
 class EnemyPilot : Pilot
 {
     public float assaultDelay = 4.0f;
-    public float minimalDistance = 7.0f;
+    public float minimalDistance = 350.0f;
 
     private float lastAssaultTime;
 
