@@ -24,8 +24,8 @@ public class TurretController : MonoBehaviour
 
         Debug.Log("Laser Spawn");
         LaserController clone = Instantiate(laser, transform.position, transform.rotation);
-
-        yield return new WaitForSeconds(1);
+        
+        yield return new WaitForSeconds(0.5f);
 
         _justShot = false;
     }
