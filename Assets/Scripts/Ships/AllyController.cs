@@ -8,7 +8,7 @@ public class AllyController : ShipController
     public Slider shipHealth;
     public GameObject gameOverWindow;
     public float hullPoints = 100f;
-    public float damageAmount = 10f;
+    public float damageAmount = 7.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -44,8 +44,13 @@ public class AllyController : ShipController
         GetDecision();
         Move();
     }
+
     public void RepairedPart()
     {
         hullPoints += damageAmount;
+
+        // IDEA :
+        // If zone is Orange, recover only 2/3 of damageAmount
+        // If zone is Red, recover only 1/3 of damageAmount
     }
 }
