@@ -14,7 +14,7 @@ public class MiniGame_Breach : MonoBehaviour
 
     float _particleSize;
 
-    char[] _alpha = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+    char[] _alpha = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
 
     KeyCode _key;
 
@@ -36,7 +36,7 @@ public class MiniGame_Breach : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(0.5f, 1f));
 
-        char c = _alpha[Random.Range(0, 26)];
+        char c = _alpha[Random.Range(0, 25)];
 
         GameObject go = Instantiate(window, canvas.transform);
 

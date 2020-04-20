@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ShipMap : MonoBehaviour
 {
     public GameObject gameOverWindow;
+    public Text timerRecord;
 
     public Image map_AileGauche;
     public Image map_AileDroite;
@@ -41,7 +42,7 @@ public class ShipMap : MonoBehaviour
     int dmg_AileDroite = 0;
     int dmg_Avant = 0;
     int dmg_Centre = 0;
-    int dmg_Arriere = 0;
+    int dmg_Arriere = 0;   
 
     public void LeftWing(int dmg)
     {
@@ -71,6 +72,10 @@ public class ShipMap : MonoBehaviour
         if (dmg_AileGauche == 8)
         {
             // Left wing is fully broken => GAME OVER
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+            timerRecord.text = "Timer : " + System.Math.Round(Time.timeSinceLevelLoad, 2) + " s";
+
             map_AileGauche.sprite = black_AileGauche;
             gameOverWindow.SetActive(true);
             gameOverWindow.GetComponentInChildren<Text>().text = "The left wing hasn't been repaired and broke.\nGame Over.";
@@ -117,6 +122,10 @@ public class ShipMap : MonoBehaviour
         if (dmg_AileDroite == 8)
         {
             // Right wing is fully broken => GAME OVER
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+            timerRecord.text = "Timer : " + System.Math.Round(Time.timeSinceLevelLoad, 2) + " s";
+
             map_AileDroite.sprite = black_AileDroite;
             gameOverWindow.SetActive(true);
             gameOverWindow.GetComponentInChildren<Text>().text = "The right wing hasn't been repaired and broke.\nGame Over.";
@@ -164,6 +173,10 @@ public class ShipMap : MonoBehaviour
         if (dmg_Avant == 8)
         {
             // Front is fully broken => GAME OVER
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+            timerRecord.text = "Timer : " + System.Math.Round(Time.timeSinceLevelLoad, 2) + " s";
+
             map_Avant.sprite = black_Avant;
             gameOverWindow.SetActive(true);
             gameOverWindow.GetComponentInChildren<Text>().text = "The front hasn't been repaired and broke.\nGame Over.";
@@ -210,6 +223,10 @@ public class ShipMap : MonoBehaviour
         if (dmg_Centre == 8)
         {
             // Center is fully broken => GAME OVER
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+            timerRecord.text = "Timer : " + System.Math.Round(Time.timeSinceLevelLoad, 2) + " s";
+
             map_Centre.sprite = black_Centre;
             gameOverWindow.SetActive(true);
             gameOverWindow.GetComponentInChildren<Text>().text = "The center hasn't been repaired and broke.\nGame Over.";
@@ -255,6 +272,10 @@ public class ShipMap : MonoBehaviour
         if (dmg_Arriere == 8)
         {
             // Back is fully broken => GAME OVER
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+            timerRecord.text = "Timer : " + System.Math.Round(Time.timeSinceLevelLoad, 2) + " s";
+
             map_Arriere.sprite = black_Arriere;
             gameOverWindow.SetActive(true);
             gameOverWindow.GetComponentInChildren<Text>().text = "The back hasn't been repaired and broke.\nGame Over.";

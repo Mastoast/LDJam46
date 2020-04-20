@@ -585,7 +585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Begin tutorial
+  m_Text: 'Tutorial
 
 '
 --- !u!222 &607567412
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 749991868}
   - component: {fileID: 749991867}
   m_Layer: 5
-  m_Name: BeginTutorial
+  m_Name: Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2195,7 +2195,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Skip tutorial
+  m_Text: Start Battle
 --- !u!222 &1541506157
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2539,7 +2539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1775917286
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2672,7 +2672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1961741218
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2877,7 +2877,7 @@ GameObject:
   - component: {fileID: 2082975009}
   - component: {fileID: 2082975008}
   m_Layer: 5
-  m_Name: SkipTutorial
+  m_Name: StartBattle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

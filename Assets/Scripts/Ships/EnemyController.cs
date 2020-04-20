@@ -81,6 +81,9 @@ public class EnemyController : ShipController
         b.transform.localPosition = go.transform.localPosition;
         b.transform.up = go.transform.up;
 
+        // Damages
+        target.GetComponent<AllyController>().hullPoints -= target.GetComponent<AllyController>().damageAmount;
+
         _justSpawned = false;
     }
 
