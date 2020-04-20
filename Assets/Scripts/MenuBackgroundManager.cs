@@ -5,11 +5,12 @@ using UnityEngine;
 public class MenuBackgroundManager : MonoBehaviour
 {
     public GameObject starship;
+    public GameObject biduleHandler;
     public GameObject bidule;
 
     public float starshipMovementSpeed = 0.3f;
     public float biduleMovementSpeed = 0.05f;
-    public float biduleRotationSpeed = 1f;
+    public float biduleRotationSpeed = 25f;
 
 
     private Vector3 starshipMovement;
@@ -20,9 +21,10 @@ public class MenuBackgroundManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        bidule.transform.Rotate(Vector3.back * biduleRotationSpeed);
 
-        biduleMovement = bidule.transform.right * -biduleMovementSpeed;
-        bidule.transform.localPosition = (bidule.transform.localPosition + biduleMovement);
+        biduleMovement = biduleHandler.transform.right * -biduleMovementSpeed;
+        biduleHandler.transform.localPosition = (biduleHandler.transform.localPosition + biduleMovement);
 
         starshipMovement = starship.transform.forward * starshipMovementSpeed;
         starship.transform.localPosition = (starship.transform.localPosition + starshipMovement);
