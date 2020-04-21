@@ -834,11 +834,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3809160090702211489, guid: 701899e4b1acf7543b3d367e6adf2f5e,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4198787704889609536, guid: 701899e4b1acf7543b3d367e6adf2f5e,
         type: 3}
       propertyPath: PlatformCollider
@@ -1897,7 +1892,7 @@ PrefabInstance:
     - target: {fileID: 1738674164449846619, guid: 12023d7ef91d35f46ba97a4ffbe023ee,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1763870557869710390, guid: 12023d7ef91d35f46ba97a4ffbe023ee,
         type: 3}
@@ -2047,7 +2042,7 @@ PrefabInstance:
     - target: {fileID: 6359978364843609408, guid: 12023d7ef91d35f46ba97a4ffbe023ee,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6898603285987901405, guid: 12023d7ef91d35f46ba97a4ffbe023ee,
         type: 3}
@@ -2278,11 +2273,6 @@ PrefabInstance:
       propertyPath: map_Arriere
       value: 
       objectReference: {fileID: 298167490}
-    - target: {fileID: 5596209063488962754, guid: 3a385fbacdd0a284f8a89afab2db9a6b,
-        type: 3}
-      propertyPath: timerRecord
-      value: 
-      objectReference: {fileID: 1101478654}
     - target: {fileID: 5596209063488962755, guid: 3a385fbacdd0a284f8a89afab2db9a6b,
         type: 3}
       propertyPath: m_LocalPosition.x
