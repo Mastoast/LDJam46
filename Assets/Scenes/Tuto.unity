@@ -2269,7 +2269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 3
   explanation: Before trying to fix anything, let's check if your magnetic wheels
-    work as intended. Try to climp on top of the control center behind you.
+    work as intended. Try to climp on top of the control center behind you (At the
+    very top of the ship).
   pcol: {fileID: 1642676329}
   triggerZone: {fileID: 1917970878}
 --- !u!82 &577069401
@@ -3970,7 +3971,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 9
   explanation: Oh no ! A Bidule as landed on our ship and has created a breach !
-    Put it into orbit by punching it out with E !
+    Put it into orbit by punching it out with E ! (It's located under your current
+    position, at the other side of the ship)
   problem: {fileID: 877987084}
 --- !u!114 &1367610464 stripped
 MonoBehaviour:
@@ -4093,7 +4095,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 11
   explanation: You must now repair the breach this damn Bidule has created, but you're
-    out of materials. Go to the restock point and press E to restock materials.
+    out of materials. Go to the restock point and press E to restock materials. (The
+    restock point is at the top side of the ship, near the location where we started
+    this tutorial)
   stock: {fileID: 859023930}
 --- !u!20 &1693716400 stripped
 Camera:
