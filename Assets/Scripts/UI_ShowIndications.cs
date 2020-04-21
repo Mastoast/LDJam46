@@ -66,7 +66,10 @@ public class UI_ShowIndications : MonoBehaviour
         _isColliding = true;
 
         if (other.tag.Equals("Breach"))
-            StartCoroutine(ShowIndications("Breach", name));
+        {
+            if (!other.name.Equals("FreeBreach"))
+                StartCoroutine(ShowIndications("Breach", name));
+        }
 
         if (other.tag.Equals("Fire"))
             StartCoroutine(ShowIndications("Fire", name));

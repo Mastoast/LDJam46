@@ -282,6 +282,8 @@ public class Repair : MonoBehaviour
 
         GameObject bidule = _attachedGameobject;
 
+        bidule.GetComponent<BiduleBreach>().ReactivateBreach();
+
         Vector3 vUp = bidule.transform.TransformDirection(Vector3.up);
         Vector3 vFw = transform.TransformDirection(Vector3.forward);
         Vector3 vDiag = vUp + vFw;
@@ -350,6 +352,16 @@ public class Repair : MonoBehaviour
         selectTool.canMove = true;
 
         textAction.text = "";
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("Breach"))
+        {
+            _onBreach = true;
+            _attachedGameobject = other.gameObject;
+            textAction.text = "Press E to repair breach";
+        }
     }
 
     private void OnTriggerEnter(Collider other)

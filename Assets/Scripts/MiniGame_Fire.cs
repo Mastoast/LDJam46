@@ -63,8 +63,8 @@ public class MiniGame_Fire : MonoBehaviour
 
             sliderJauge.value -= 0.001f * (1.65f - jaugeCoef);
 
-            if (sliderJauge.value > 0.66f)
-                particleSize -= 0.001f;
+            if (sliderJauge.value > 0.5f)
+                particleSize -= 0.002f;
 
             flame.localScale = Vector3.one * particleSize;
             smoke.localScale = Vector3.one * particleSize;
