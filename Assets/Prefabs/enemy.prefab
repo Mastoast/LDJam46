@@ -61,6 +61,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4003400946193936766}
     m_Modifications:
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.3962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.060053803
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Time
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4427878428921560120, guid: 5460413bfa3559b4c8a9625088b5e4df,
         type: 3}
       propertyPath: m_RenderMode
@@ -336,6 +361,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4003400946193936766}
     m_Modifications:
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.3962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.060053803
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Time
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4427878428921560120, guid: 5460413bfa3559b4c8a9625088b5e4df,
         type: 3}
       propertyPath: m_RenderMode
@@ -461,6 +511,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4003400946193936766}
     m_Modifications:
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.3962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.060053803
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.numCapVertices
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Time
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4427878428921560120, guid: 5460413bfa3559b4c8a9625088b5e4df,
         type: 3}
       propertyPath: m_RenderMode
@@ -661,6 +746,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4003400946193936766}
     m_Modifications:
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.3962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.060053803
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Time
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4427878428921560120, guid: 5460413bfa3559b4c8a9625088b5e4df,
         type: 3}
       propertyPath: m_RenderMode
