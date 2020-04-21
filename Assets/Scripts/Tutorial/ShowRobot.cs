@@ -32,7 +32,7 @@ public class ShowRobot : Tutorial
             enemy.SetActive(false);
             breach.SetActive(false);
             canvas.enabled = false;
-            pm.enabled = false;
+            pm.canMove = false;
             armMesh.SetActive(false);
             entireMesh.SetActive(true);
 

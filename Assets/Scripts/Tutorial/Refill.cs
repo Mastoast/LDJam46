@@ -13,6 +13,7 @@ public class Refill : Tutorial
         {
             if (justFinished)
             {
+                TutorialManager.Instance.actionFinished();
                 justFinished = false;
                 startTime = Time.time;
             }

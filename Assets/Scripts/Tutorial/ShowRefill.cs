@@ -16,7 +16,7 @@ public class ShowRefill : Tutorial
         if (justStarted)
         {
             GetComponent<AudioSource>().Play();
-            pm.enabled = false;
+            pm.canMove = false;
             canvas.enabled = false;
 
             cameraPlayer.enabled = false;
@@ -29,7 +29,7 @@ public class ShowRefill : Tutorial
             GetComponent<AudioSource>().Stop();
             cameraRefill.enabled = false;
             cameraPlayer.enabled = true;
-            pm.enabled = true;
+            pm.canMove = true;
             canvas.enabled = true;
             TutorialManager.Instance.completedTutorial();
         }

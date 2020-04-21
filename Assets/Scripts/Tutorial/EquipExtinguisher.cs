@@ -16,7 +16,7 @@ public class EquipExtinguisher : Tutorial
         if (justStarted)
         {
             canvas.enabled = true;
-            pm.enabled = true;
+            pm.canMove = true;
             cameraFire.enabled = false;
             cameraPlayer.enabled = true;
             justStarted = false;
