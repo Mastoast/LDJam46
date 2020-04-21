@@ -989,8 +989,8 @@ MonoBehaviour:
   cameraPlayer: {fileID: 1693716400}
   pm: {fileID: 1972573103}
   keysToPress:
-  - z
-  - q
+  - w
+  - a
   - s
   - d
 --- !u!4 &218927456
