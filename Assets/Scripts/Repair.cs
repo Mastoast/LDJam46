@@ -360,7 +360,9 @@ public class Repair : MonoBehaviour
         {
             _onBreach = true;
             _attachedGameobject = other.gameObject;
-            textAction.text = "Press E to repair breach";
+            
+            if (!textAction.text.Equals("Not enough Metal") && !textAction.text.Equals("No Soldering tool equiped") && !textAction.text.Equals("Press the right keys !"))
+                textAction.text = "Press E to repair breach";
         }
     }
 
