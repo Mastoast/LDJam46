@@ -20,7 +20,7 @@ public class MoveTutorial : Tutorial
         {
 
             GetComponent<AudioSource>().Play();
-            pm.enabled = true;
+            pm.canMove = true;
             cameraRear.enabled = false;
             cameraPlayer.enabled = true;
             entireMesh.SetActive(false);

@@ -19,7 +19,7 @@ public class ShowBidule : Tutorial
         if (justStarted)
         {
             GetComponent<AudioSource>().Play();
-            pm.enabled = false;
+            pm.canMove = false;
             canvas.enabled = false;
             bidule.SetActive(true);
             breach.SetActive(true);
@@ -35,7 +35,7 @@ public class ShowBidule : Tutorial
             GetComponent<AudioSource>().Stop();
             cameraBidule.enabled = false;
             cameraPlayer.enabled = true;
-            pm.enabled = true;
+            pm.canMove = true;
             canvas.enabled = true;
             TutorialManager.Instance.completedTutorial();
         }

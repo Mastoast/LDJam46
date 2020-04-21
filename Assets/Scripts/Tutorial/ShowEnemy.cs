@@ -16,7 +16,7 @@ public class ShowEnemy : Tutorial
         if (justStarted)
         {
             GetComponent<AudioSource>().Play();
-            pm.enabled = false;
+            pm.canMove = false;
             enemy.SetActive(true);
 
             cameraPlayer.enabled = false;

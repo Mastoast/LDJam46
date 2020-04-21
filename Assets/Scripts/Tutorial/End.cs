@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class End : Tutorial
 {
@@ -23,7 +24,7 @@ public class End : Tutorial
             cameraRobot.enabled = true;
             
             canvas.enabled = false;
-            pm.enabled = false;
+            pm.canMove = false;
             armMesh.SetActive(false);
             entireMesh.SetActive(true);
             
@@ -33,7 +34,9 @@ public class End : Tutorial
         if (Input.GetKeyDown(KeyCode.Return))
         {
             GetComponent<AudioSource>().Stop();
-            TutorialManager.Instance.completedTutorial();
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("Menu");
+
         }
     }
 }
