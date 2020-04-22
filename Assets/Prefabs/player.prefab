@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7054477525043561765}
-  mouseSpeed: 200
+  mouseSpeed: 160
   canMove: 1
 --- !u!1 &7054477525043561766
 GameObject:
