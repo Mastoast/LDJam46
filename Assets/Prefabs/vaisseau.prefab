@@ -5077,6 +5077,26 @@ PrefabInstance:
       propertyPath: m_Parameters.widthMultiplier
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.9725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].value
+      value: 0.29999542
+      objectReference: {fileID: 0}
     - target: {fileID: 4427878428921560121, guid: 5460413bfa3559b4c8a9625088b5e4df,
         type: 3}
       propertyPath: m_Name
@@ -5307,6 +5327,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Parameters.widthMultiplier
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.9725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267084497738648097, guid: 5460413bfa3559b4c8a9625088b5e4df,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].value
+      value: 0.27777863
       objectReference: {fileID: 0}
     - target: {fileID: 4427878428921560121, guid: 5460413bfa3559b4c8a9625088b5e4df,
         type: 3}
